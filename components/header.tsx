@@ -1,59 +1,36 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Logo from '../public/logo.png';
-import Wrapper from '@/components/wrapper';
+import Nav from '@/components/nav';
+import Popover from '@/components/popover';
 import Button from '@/components/ui/button';
 import { SparklesIcon } from '@/components/ui/icon';
+import Wrapper from '@/components/ui/wrapper';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-const nav = [
-  {
-    path: '/',
-    title: 'Главная',
-    sub_menu: [],
-  },
-  {
-    path: 'services',
-    title: 'Услуги',
-    sub_menu: [],
-  },
-  {
-    path: 'portfolio',
-    title: 'Работы',
-    sub_menu: [],
-  },
-  {
-    path: 'about',
-    title: 'О нас',
-    sub_menu: [],
-  },
-  {
-    path: 'contacts',
-    title: 'Контакты',
-    sub_menu: [],
-  },
+const langs = [
+  { title: 'UZ', path: 'uz' },
+  { title: 'RU', path: 'ru' },
+  { title: 'EN', path: 'en' },
 ];
 
 const Header = () => {
+  const [selected, setSelected] = useState(langs[0].title);
   return (
-    <header>
-      <Wrapper className="my-11 flex items-center justify-between">
+    <header className="sticky top-0 z-10 bg-[#04040E] shadow-lg">
+      <Wrapper className="py-4 flex items-center justify-between relative">
         <Link href={'/'}>
           <Image
-            src={Logo}
+            src="/logo.png"
             alt={'site logo'}
+            width={193}
             height={31}
             quality={100}
             priority={true}
           />
         </Link>
-        <nav className="w-fit flex items-center gap-16">
-          {nav.map((item) => (
-            <Link href={item.path} key={item.path} className="text-white">
-              {item.title}
-            </Link>
-          ))}
-        </nav>
-        <div>
+        <Nav />
+        <div className="flex gap-3">
+          <Popover title={selected} items={langs} />
           <Button
             icon={<SparklesIcon className="w-5 h-5" />}
             className="rounded-full"
