@@ -64,15 +64,22 @@ export default function Home() {
           </div>
         </div>
       </Wrapper>
-      <Wrapper>
+      <Wrapper className="max-w-[100vw]">
         <BlockTitle>Последние работы</BlockTitle>
         <div className="grid grid-cols-2 gap-4">
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] max-h-[420px]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] max-h-[420px]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] max-h-[420px]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] max-h-[420px]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] max-h-[420px]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] max-h-[420px]"></div>
+          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] flex items-end justify-start p-10">
+            <div className="max-w-sm">
+              <p className="text-base mb-2">Website</p>
+              <h4 className="text-3xl font-medium">
+                Title long title second line long title
+              </h4>
+            </div>
+          </div>
+          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
+          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
+          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
+          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
+          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
         </div>
       </Wrapper>
     </Layout>

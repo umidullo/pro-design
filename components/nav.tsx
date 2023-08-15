@@ -62,8 +62,9 @@ const Nav = () => {
           <Link
             href={item.path}
             key={item.path}
-            className="px-4 py-2 flex items-center justify-center flex-col text-center relative text-white after:content-[''] after:absolute 
-       after:-bottom-1 after:w-0 after:h-px after:bg-white hover:after:w-full transition-transform after:ease-in-out after:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md"
+            className="px-4 py-2 flex items-center justify-center flex-col text-center relative text-white 
+            after:content-[''] after:absolute after:-bottom-1 after:w-0 after:h-0 after:rounded-t-sm after:bg-white 
+            hover:after:w-full hover:after:h-[3px] transition-transform after:ease-in-out after:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md"
           >
             {item.title}
           </Link>
