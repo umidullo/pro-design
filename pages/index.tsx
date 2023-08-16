@@ -5,16 +5,19 @@ import { ArrowIcon, PlayIcon } from '@/components/ui/icon';
 import Wrapper from '@/components/ui/wrapper';
 import { getStaticPropsTranslations } from '@/helpers/i18n';
 import { GetServerSideProps } from 'next';
+import { useTranslation } from 'next-i18next';
+import Marquee from 'react-fast-marquee';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
-      ...(await getStaticPropsTranslations(context.locale ?? 'uz')),
+      ...(await getStaticPropsTranslations(context.locale ?? 'ru')),
     },
   };
 };
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <Layout>
       <Wrapper className="flex justify-between">
@@ -24,7 +27,7 @@ export default function Home() {
               разрабатываем и создаем эффективный цифровой опыт
             </h1>
             <Button icon={<PlayIcon className="w-5 h-5 stroke-2" />}>
-              Шоурил
+              {t('buttons.promo')}
             </Button>
           </div>
           {/* <video
@@ -38,7 +41,7 @@ export default function Home() {
         </div>
       </Wrapper>
       <Wrapper className="mb-4">
-        <BlockTitle>Наши услуги</BlockTitle>
+        <BlockTitle>{t('b_titles.services')}</BlockTitle>
         <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[calc(100vh-132px)] max-h-[730px]">
           <div className="col-start-1 col-end-2 row-start-1 row-end-3 bg-blue-900 rounded-3xl p-10">
             <h3 className="text-3xl font-semibold">UX/UI дизайн</h3>
@@ -46,7 +49,7 @@ export default function Home() {
               Advanced training in executing an effective background inbound
               marketing strategy.
             </h4>
-            <Button icon={<ArrowIcon />}>Смотреть</Button>
+            <Button icon={<ArrowIcon />}>{t('buttons.goto')}</Button>
           </div>
           <div className="col-start-2 col-end-4 row-start-1 row-end-2 bg-blue-900 rounded-3xl p-10">
             <h3 className="text-3xl font-semibold">UX/UI дизайн</h3>
@@ -54,7 +57,7 @@ export default function Home() {
               Advanced training in executing an effective background inbound
               marketing strategy.
             </h4>
-            <Button icon={<ArrowIcon />}>Смотреть</Button>
+            <Button icon={<ArrowIcon />}>{t('buttons.goto')}</Button>
           </div>
           <div className="col-start-2 col-end-3 row-start-2 row-end-3 bg-blue-900 rounded-3xl p-10">
             <h3 className="text-3xl font-semibold">UX/UI дизайн</h3>
@@ -62,7 +65,7 @@ export default function Home() {
               Advanced training in executing an effective background inbound
               marketing strategy.
             </h4>
-            <Button icon={<ArrowIcon />}>Смотреть</Button>
+            <Button icon={<ArrowIcon />}>{t('buttons.goto')}</Button>
           </div>
           <div className="col-start-3 col-end-4 row-start-2 row-end-3 bg-blue-900 rounded-3xl p-10">
             <h3 className="text-3xl font-semibold">UX/UI дизайн</h3>
@@ -70,12 +73,12 @@ export default function Home() {
               Advanced training in executing an effective background inbound
               marketing strategy.
             </h4>
-            <Button icon={<ArrowIcon />}>Смотреть</Button>
+            <Button icon={<ArrowIcon />}>{t('buttons.goto')}</Button>
           </div>
         </div>
       </Wrapper>
       <Wrapper className="max-w-[100vw]">
-        <BlockTitle>Последние работы</BlockTitle>
+        <BlockTitle>{t('b_titles.recents')}</BlockTitle>
         <div className="grid grid-cols-2 gap-4">
           <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] flex items-end justify-start p-10">
             <div className="max-w-sm">
@@ -92,6 +95,15 @@ export default function Home() {
           <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
         </div>
       </Wrapper>
+      <div>
+        <BlockTitle>{t('b_titles.clients')}</BlockTitle>
+        <div>
+          <Marquee>
+            I can be a React component, multiple React components, or just some
+            text.
+          </Marquee>
+        </div>
+      </div>
     </Layout>
   );
 }

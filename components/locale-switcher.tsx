@@ -5,7 +5,6 @@ import React from 'react';
 
 const LocaleSwitcher = () => {
   const router = useRouter();
-  console.log('LocaleSwitcher ~ router:', router);
 
   const onToggleLanguageClick = (newLocale: string) => {
     const { pathname, asPath, query } = router;

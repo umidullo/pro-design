@@ -36,7 +36,7 @@ const Popover = ({
             ref={triggerRef as RefObject<HTMLButtonElement>}
             className={`
                 ${open ? '' : 'text-opacity-90'}
-                inline-flex items-center rounded-md px-3 py-2 text-base font-medium text-white outline-none`}
+                inline-flex items-center rounded-md px-3 py-2 text-base font-medium text-white outline-none capitalize`}
           >
             {title}
             <ChevronIcon

@@ -30,7 +30,7 @@ const Header = () => {
             icon={<SparklesIcon className="w-5 h-5" />}
             className="rounded-full"
           >
-            {t('buttons.news')}
+            {t('buttons.order')}
           </Button>
         </div>
       </Wrapper>

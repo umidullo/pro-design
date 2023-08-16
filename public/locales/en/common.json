@@ -1,5 +1,22 @@
 {
   "buttons": {
-    "news": "All news"
+    "order": "Request design",
+    "promo": "showreel",
+    "portfolio": "All works",
+    "goto": "Go to",
+    "send": "Send"
+  },
+  "b_titles": {
+    "services": "Our services",
+    "clients": "Our Clients",
+    "recents": "Recent works",
+    "about": "About project"
+  },
+  "nav": {
+    "home": "main",
+    "services": "services",
+    "works": "works",
+    "about": "about",
+    "contacts": "contacts"
   }
 }

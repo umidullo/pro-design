@@ -1,5 +1,22 @@
 {
   "buttons": {
-    "news": "Barcha yangiliklar"
+    "order": "buyurtma bering",
+    "promo": "shouril",
+    "portfolio": "barcha ishlar",
+    "goto": "tomosha qilish",
+    "send": "yuborish"
+  },
+  "b_titles": {
+    "services": "Bizning xizmatlarimiz",
+    "clients": "Bizga ishonishadi",
+    "recents": "Oxirgi ishlar",
+    "about": "loyiha haqida"
+  },
+  "nav": {
+    "home": "bosh sahifa",
+    "services": "xizmatlar",
+    "works": "ishlar",
+    "about": "biz haqimizda",
+    "contacts": "kontaktlar"
   }
 }

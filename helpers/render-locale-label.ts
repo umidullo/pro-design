@@ -7,6 +7,6 @@ export const renderLabel = (str: string): string => {
     case 'ru':
       return 'Рус';
     default:
-      return "O'zb";
+      return 'Рус';
   }
 };
