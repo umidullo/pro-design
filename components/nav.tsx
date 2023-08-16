@@ -55,7 +55,17 @@ const Nav = () => {
       {nav.map((item) => {
         if (item.sub_menu.length) {
           return (
-            <Popover key={item.path} title={item.title} items={item.sub_menu} />
+            <Popover key={item.path} title={item.title}>
+              {item.sub_menu.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 text-sm font-medium text-gray-900 text-center"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </Popover>
           );
         }
         return (

@@ -1,15 +1,15 @@
 import { ChevronIcon } from '@/components/ui/icon';
 import { Popover as HPopover, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import { Fragment, RefObject, useRef } from 'react';
+import { Fragment, ReactNode, RefObject, useRef } from 'react';
 
 const timeoutDuration = 120;
 const Popover = ({
   title,
-  items,
+  children,
 }: {
   title: string;
-  items: { path: string; title: string }[];
+  children?: ReactNode;
 }) => {
   const triggerRef = useRef<HTMLButtonElement>();
   const timeOutRef = useRef<any>();
@@ -58,15 +58,7 @@ const Popover = ({
             <HPopover.Panel className="absolute left-1/2 z-10 mt-3 -translate-x-1/2 transform sm:px-0">
               <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                 <div className="relative flex flex-col bg-white p-2">
-                  {items.map((item) => (
-                    <Link
-                      key={item.path}
-                      href={item.path}
-                      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 text-sm font-medium text-gray-900 text-center"
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
+                  {children}
                 </div>
               </div>
             </HPopover.Panel>

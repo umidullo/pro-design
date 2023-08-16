@@ -3,6 +3,16 @@ import BlockTitle from '@/components/ui/block-title';
 import Button from '@/components/ui/button';
 import { ArrowIcon, PlayIcon } from '@/components/ui/icon';
 import Wrapper from '@/components/ui/wrapper';
+import { getStaticPropsTranslations } from '@/helpers/i18n';
+import { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return {
+    props: {
+      ...(await getStaticPropsTranslations(context.locale ?? 'uz')),
+    },
+  };
+};
 
 export default function Home() {
   return (
