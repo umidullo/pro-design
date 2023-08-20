@@ -126,8 +126,8 @@ const footer_nav = [
 const Footer = () => {
   return (
     <footer className="pt-10 pb-12 text-[#888888]">
-      <Wrapper className="flex items-center justify-between">
-        <div className="w-full max-w-sm">
+      <Wrapper className="flex items-center justify-between flex-col lg:flex-row gap-10 lg:gap-0">
+        <div className="w-full max-w-sm order-last lg:order-none flex items-center flex-col">
           <Image
             src="/logo.png"
             alt="footer logo"
@@ -135,7 +135,7 @@ const Footer = () => {
             height={31}
             quality={100}
           />
-          <h6 className="mt-3">
+          <h6 className="mt-3 text-center lg:text-start">
             Мы профессиональная команда дизайнеров с более чем 5-летним опытом
             работы в области анимации, дизайна, 3D-моделирования и визуализации.
           </h6>
@@ -168,7 +168,9 @@ const Footer = () => {
         </div>
         {footer_nav.map((block, i) => (
           <div key={i}>
-            <h5 className="mb-3 text-white text-xl font-bold">{block.title}</h5>
+            <h5 className="mb-3 text-white text-xl font-bold text-center lg:text-start">
+              {block.title}
+            </h5>
             <ul className="space-y-1">
               {block.nav_items.map((item, j) => (
                 <li key={j}>

@@ -50,7 +50,7 @@ const Nav = () => {
     },
   ];
   return (
-    <nav className="absolute left-1/2 -translate-x-1/2 w-fit flex items-center gap-6">
+    <nav className="hidden absolute left-1/2 -translate-x-1/2 w-fit lg:flex items-center gap-6">
       {nav.map((item) => {
         if (item.sub_menu.length) {
           return (

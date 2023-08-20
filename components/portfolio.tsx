@@ -10,7 +10,7 @@ const Portfolio = ({ posts }: { posts: Record<string, unknown>[] }) => {
   return (
     <Wrapper className="max-w-[100vw]">
       <BlockTitle>{t('b_titles.recents')}</BlockTitle>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-4">
         {posts.map((post: any) => (
           <PortfolioCard
             key={post.id}

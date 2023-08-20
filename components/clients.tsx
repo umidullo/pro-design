@@ -8,14 +8,14 @@ const Clients = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="mb-20">
+    <div className="lg:mb-20">
       <BlockTitle>{t('b_titles.clients')}</BlockTitle>
       <div>
         <Marquee
           autoFill
           pauseOnHover
-          gradient
-          gradientColor={[0, 0, 0]}
+          // gradient
+          // gradientColor={[0, 0, 0]}
           className="my-3"
           speed={30}
         >

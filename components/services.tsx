@@ -10,42 +10,50 @@ const Services = () => {
   const { t } = useTranslation();
 
   return (
-    <Wrapper className="mb-4 relative">
-      <BlurCircle className="bg-lime-500 top-12 left-1/2 -translate-x-96" />
-      <BlurCircle className="bg-fuchsia-500 -top-52 right-0" />
+    <Wrapper className="relative">
+      {/* <BlurCircle className="bg-lime-500 top-12 left-1/2 -translate-x-96" /> */}
+      {/* <BlurCircle className="bg-fuchsia-500 -top-52 right-0" /> */}
       <BlockTitle>{t('b_titles.services')}</BlockTitle>
-      <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[calc(100vh-132px)] max-h-[730px]">
-        <div className="col-start-1 col-end-2 row-start-1 row-end-3 bg-blue-900 rounded-3xl p-10">
-          <h3 className="text-3xl font-semibold">UX/UI дизайн</h3>
-          <h4 className="mt-3 mb-6 text-base line-clamp-3">
+      <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 aspect-square lg:aspect-auto lg:h-[calc(100vh-132px)] max-h-[730px] py-4 mx-auto">
+        <div className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 bg-blue-900 rounded-3xl lg:p-10 grid justify-items-center content-center">
+          <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
+          <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3">
             Advanced training in executing an effective background inbound
             marketing strategy.
           </h4>
-          <Button icon={<ArrowIcon />}>{t('buttons.goto')}</Button>
+          <Button className="hidden lg:block" icon={<ArrowIcon />}>
+            {t('buttons.goto')}
+          </Button>
         </div>
-        <div className="col-start-2 col-end-4 row-start-1 row-end-2 bg-blue-900 rounded-3xl p-10">
-          <h3 className="text-3xl font-semibold">UX/UI дизайн</h3>
-          <h4 className="mt-3 mb-6 text-base line-clamp-3 w-[320px]">
+        <div className="lg:col-start-2 lg:col-end-4 lg:row-start-1 lg:row-end-2 bg-blue-900 rounded-3xl lg:p-10 grid justify-items-center content-center">
+          <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
+          <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3 w-[320px]">
             Advanced training in executing an effective background inbound
             marketing strategy.
           </h4>
-          <Button icon={<ArrowIcon />}>{t('buttons.goto')}</Button>
+          <Button className="hidden lg:block" icon={<ArrowIcon />}>
+            {t('buttons.goto')}
+          </Button>
         </div>
-        <div className="col-start-2 col-end-3 row-start-2 row-end-3 bg-blue-900 rounded-3xl p-10">
-          <h3 className="text-3xl font-semibold">UX/UI дизайн</h3>
-          <h4 className="mt-3 mb-6 text-base line-clamp-3 w-fit">
+        <div className="lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3 bg-blue-900 rounded-3xl lg:p-10 grid justify-items-center content-center">
+          <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
+          <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3 w-fit">
             Advanced training in executing an effective background inbound
             marketing strategy.
           </h4>
-          <Button icon={<ArrowIcon />}>{t('buttons.goto')}</Button>
+          <Button className="hidden lg:block" icon={<ArrowIcon />}>
+            {t('buttons.goto')}
+          </Button>
         </div>
-        <div className="col-start-3 col-end-4 row-start-2 row-end-3 bg-blue-900 rounded-3xl p-10">
-          <h3 className="text-3xl font-semibold">UX/UI дизайн</h3>
-          <h4 className="mt-3 mb-6 text-base line-clamp-3 w-fit">
+        <div className="lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-3 bg-blue-900 rounded-3xl lg:p-10 grid justify-items-center content-center">
+          <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
+          <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3 w-fit">
             Advanced training in executing an effective background inbound
             marketing strategy.
           </h4>
-          <Button icon={<ArrowIcon />}>{t('buttons.goto')}</Button>
+          <Button className="hidden lg:block" icon={<ArrowIcon />}>
+            {t('buttons.goto')}
+          </Button>
         </div>
       </div>
     </Wrapper>

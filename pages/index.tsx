@@ -25,8 +25,8 @@ export default function Home({
     <Layout>
       <Promo />
       <Services />
-      <Clients />
       <Portfolio posts={posts} />
+      <Clients />
     </Layout>
   );
 }

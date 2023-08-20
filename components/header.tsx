@@ -46,7 +46,7 @@ const Header = () => {
           />
         </Link>
         <Nav />
-        <div className="flex gap-3">
+        <div className="hidden lg:flex gap-3">
           <LocaleSwitcher />
           <Button
             icon={<SparklesIcon className="w-5 h-5" />}
