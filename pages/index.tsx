@@ -1,22 +1,31 @@
+import BlurCircle from '@/components/blur-circle';
 import Layout from '@/components/layout';
+import PortfolioCard from '@/components/portfolio-card';
 import BlockTitle from '@/components/ui/block-title';
 import Button from '@/components/ui/button';
 import { ArrowIcon, PlayIcon } from '@/components/ui/icon';
 import Wrapper from '@/components/ui/wrapper';
-import { getStaticPropsTranslations } from '@/helpers/i18n';
-import { GetServerSideProps } from 'next';
+import { fetchData } from '@/utils/api/config';
+import { getStaticPropsTranslations } from '@/utils/helpers/i18n';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const posts = await fetchData('posts', context.locale);
+
   return {
     props: {
+      posts,
       ...(await getStaticPropsTranslations(context.locale ?? 'ru')),
     },
   };
 };
 
-export default function Home() {
+export default function Home({
+  posts,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { t } = useTranslation();
   return (
     <Layout>
@@ -40,7 +49,9 @@ export default function Home() {
           <div className="absolute top-0 left-0 bottom-0 right-0 bg-black opacity-20 z-[-1]"></div> */}
         </div>
       </Wrapper>
-      <Wrapper className="mb-4">
+      <Wrapper className="mb-4 relative">
+        <BlurCircle className="bg-lime-500 top-12 left-1/2 -translate-x-96" />
+        <BlurCircle className="bg-fuchsia-500 -top-52 right-0" />
         <BlockTitle>{t('b_titles.services')}</BlockTitle>
         <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[calc(100vh-132px)] max-h-[730px]">
           <div className="col-start-1 col-end-2 row-start-1 row-end-3 bg-blue-900 rounded-3xl p-10">
@@ -80,27 +91,72 @@ export default function Home() {
       <Wrapper className="max-w-[100vw]">
         <BlockTitle>{t('b_titles.recents')}</BlockTitle>
         <div className="grid grid-cols-2 gap-4">
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw] flex items-end justify-start p-10">
-            <div className="max-w-sm">
-              <p className="text-base mb-2">Website</p>
-              <h4 className="text-3xl font-medium">
-                Title long title second line long title
-              </h4>
-            </div>
-          </div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
-          <div className="col-span-1 bg-blue-900 rounded-3xl h-[25vw]"></div>
+          {posts.map((post: any) => (
+            <PortfolioCard
+              key={post.id}
+              image={post.image}
+              title={post.title}
+              id={post.id}
+              slug={post.slug}
+              is_video={post.is_video}
+              video={post.video}
+            />
+          ))}
         </div>
       </Wrapper>
-      <div>
+      <div className="mb-20">
         <BlockTitle>{t('b_titles.clients')}</BlockTitle>
         <div>
-          <Marquee>
-            I can be a React component, multiple React components, or just some
-            text.
+          <Marquee
+            autoFill
+            pauseOnHover
+            gradient
+            gradientColor={[0, 0, 0]}
+            className="my-3"
+            speed={30}
+          >
+            <Image
+              src="/temp/1.png"
+              alt="client"
+              height={60}
+              width={100}
+              className="mx-3"
+            />
+            <Image
+              src="/temp/2.png"
+              alt="client"
+              height={60}
+              width={100}
+              className="mx-3"
+            />
+            <Image
+              src="/temp/3.png"
+              alt="client"
+              height={60}
+              width={100}
+              className="mx-3"
+            />
+            <Image
+              src="/temp/4.png"
+              alt="client"
+              height={60}
+              width={100}
+              className="mx-3"
+            />
+            <Image
+              src="/temp/5.png"
+              alt="client"
+              height={60}
+              width={100}
+              className="mx-3"
+            />
+            <Image
+              src="/temp/6.png"
+              alt="client"
+              height={60}
+              width={100}
+              className="mx-3"
+            />
           </Marquee>
         </div>
       </div>

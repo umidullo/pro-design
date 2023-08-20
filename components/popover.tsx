@@ -1,6 +1,5 @@
 import { ChevronIcon } from '@/components/ui/icon';
 import { Popover as HPopover, Transition } from '@headlessui/react';
-import Link from 'next/link';
 import { Fragment, ReactNode, RefObject, useRef } from 'react';
 
 const timeoutDuration = 120;
@@ -34,9 +33,8 @@ const Popover = ({
         >
           <HPopover.Button
             ref={triggerRef as RefObject<HTMLButtonElement>}
-            className={`
-                ${open ? '' : 'text-opacity-90'}
-                inline-flex items-center rounded-md px-3 py-2 text-base font-medium text-white outline-none capitalize`}
+            className="
+                inline-flex items-center rounded-md px-3 py-2 text-base font-medium text-white outline-none capitalize"
           >
             {title}
             <ChevronIcon

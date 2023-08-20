@@ -1,9 +1,6 @@
 import Popover from '@/components/popover';
-import { ChevronIcon } from '@/components/ui/icon';
-import { Menu, Transition } from '@headlessui/react';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { Fragment } from 'react';
 
 const Nav = () => {
   const { t } = useTranslation();
@@ -75,8 +72,8 @@ const Nav = () => {
             href={item.path}
             key={item.path}
             className="capitalize px-4 py-2 flex items-center justify-center flex-col text-center relative text-white 
-            after:content-[''] after:absolute after:-bottom-1 after:w-0 after:h-0 after:rounded-t-sm after:bg-white 
-            hover:after:w-full hover:after:h-[3px] transition-transform after:ease-in-out after:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md"
+            after:content-[''] after:absolute after:-bottom-1 after:w-0 after:h-1 after:rounded-t-sm after:bg-white 
+            hover:after:w-full transition-all after:ease-in-out after:duration-300"
           >
             {item.title}
           </Link>

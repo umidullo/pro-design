@@ -6,12 +6,34 @@ import Wrapper from '@/components/ui/wrapper';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const { t } = useTranslation();
+  const [stick, setStick] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window?.scrollY > 0) {
+        setStick(true);
+      } else {
+        setStick(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="sticky top-0 z-10 bg-[#04040E] shadow-lg">
+    <header
+      className={`transition-colors sticky top-0 z-10 ${
+        stick ? 'bg-[#04040E] shadow-lg' : ''
+      }`}
+    >
       <Wrapper className="py-4 flex items-center justify-between relative">
         <Link href={'/'}>
           <Image

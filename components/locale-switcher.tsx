@@ -1,5 +1,5 @@
 import Popover from '@/components/popover';
-import { renderLabel } from '@/helpers/render-locale-label';
+import { renderLabel } from '@/utils/helpers/render-locale-label';
 import { useRouter } from 'next/router';
 import React from 'react';
 
