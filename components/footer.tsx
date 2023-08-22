@@ -1,133 +1,102 @@
 import { SocialIcon } from '@/components/ui/icon';
 import Wrapper from '@/components/ui/wrapper';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const footer_nav = [
   {
-    title: 'Услуги',
+    title: 'nav.services',
     nav_items: [
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.ui_ux',
+        path: '/services/ui-ux',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.motion',
+        path: '/services/motion-graphics',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.branding',
+        path: '/services/branding',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.vfx',
+        path: '/services/vfx',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.interior',
+        path: '/services/interior-design',
       },
     ],
   },
   {
-    title: 'Услуги',
+    title: 'nav.works',
     nav_items: [
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.web',
+        path: '/portfolio/web',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.motion',
+        path: '/portfolio/motion-design',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.branding',
+        path: '/portfolio/branding',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.vfx',
+        path: '/portfolio/vfx',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.interior',
+        path: '/portfolio/interior-design',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.mobile',
+        path: '/portfolio/mobile',
       },
     ],
   },
   {
-    title: 'Услуги',
+    title: 'nav.info',
     nav_items: [
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav.about',
+        path: '/info/about',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.vacancy',
+        path: '/info/career',
       },
       {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-    ],
-  },
-  {
-    title: 'Услуги',
-    nav_items: [
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
-      },
-      {
-        title: 'UX/UI дизайн',
-        path: '/',
+        title: 'nav_items.com_offer',
+        path: '/info/terms',
       },
     ],
   },
 ];
 
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const hiddenFeatureHandler = (
+    e: React.MouseEvent<HTMLParagraphElement, MouseEvent>
+  ) => {
+    e.stopPropagation();
+    if (e.shiftKey) {
+      if (window) {
+        window.open('https://t.me/umidullo');
+      }
+    }
+  };
+
   return (
-    <footer className="pt-10 pb-12 text-[#888888]">
-      <Wrapper className="flex items-center justify-between flex-col lg:flex-row gap-10 lg:gap-0">
-        <div className="w-full max-w-sm order-last lg:order-none flex items-center flex-col">
+    <footer className="pt-10 pb-12 text-[#888888] border-t border-[#333]">
+      <Wrapper className="max-w-6xl flex items-start justify-between flex-col lg:flex-row gap-10 lg:gap-20">
+        <div className="w-full max-w-sm order-last lg:order-none flex items-center flex-col lg:items-start">
           <Image
             src="/logo.png"
             alt="footer logo"
@@ -135,10 +104,7 @@ const Footer = () => {
             height={31}
             quality={100}
           />
-          <h6 className="mt-3 text-center lg:text-start">
-            Мы профессиональная команда дизайнеров с более чем 5-летним опытом
-            работы в области анимации, дизайна, 3D-моделирования и визуализации.
-          </h6>
+          <h6 className="mt-3 text-center lg:text-start">{t('footer')}</h6>
           <div className="flex gap-8 mt-6 transition-all">
             <Link
               href="https://www.facebook.com/prodesignofficial"
@@ -167,21 +133,29 @@ const Footer = () => {
           </div>
         </div>
         {footer_nav.map((block, i) => (
-          <div key={i}>
-            <h5 className="mb-3 text-white text-xl font-bold text-center lg:text-start">
-              {block.title}
+          <div key={i} className="w-full lg:w-fit">
+            <h5 className="mb-3 text-white text-xl font-bold text-center lg:text-start capitalize">
+              {t(block.title)}
             </h5>
             <ul className="space-y-1">
               {block.nav_items.map((item, j) => (
-                <li key={j}>
+                <li
+                  key={j}
+                  className="text-center lg:text-start lg:w-max w-full"
+                >
                   <Link href={item.path} className="hover:text-white">
-                    {item.title}
+                    {t(item.title)}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
         ))}
+      </Wrapper>
+      <Wrapper className="max-w-6xl mt-10">
+        <p className="text-xs" onClick={(e) => hiddenFeatureHandler(e)}>
+          © 2023 ProDesign team.
+        </p>
       </Wrapper>
     </footer>
   );

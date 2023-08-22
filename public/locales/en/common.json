@@ -1,4 +1,5 @@
 {
+  "magic": "There will be super modern minimalistic design with essential information about pro-design company.",
   "buttons": {
     "order": "Request design",
     "promo": "showreel",
@@ -17,6 +18,20 @@
     "services": "services",
     "works": "works",
     "about": "about",
-    "contacts": "contacts"
-  }
+    "contacts": "contacts",
+    "info": "Information"
+  },
+  "nav_items": {
+    "ui_ux": "UX/UI design",
+    "motion": "Motion graphics",
+    "branding": "Branding",
+    "vfx": "VFX",
+    "interior": "Interior design",
+    "web": "Web",
+    "mobile": "Mobile apps",
+    "vacancy": "Vacancies",
+    "com_offer": "Commertial offer",
+    "adress": "Khushnavo 5B, Tashkent"
+  },
+  "footer": "We are a professional design team with over 5 years of experience in animation, design, 3D modeling and visualization."
 }

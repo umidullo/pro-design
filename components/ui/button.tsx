@@ -20,7 +20,7 @@ const Button = ({
       {...props}
       onClick={onClick}
       className={twMerge(
-        'transition-all ease-in-out duration-300 capitalize text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 flex gap-2 items-center justify-between hover:bg-white hover:text-black active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md§',
+        'transition-all ease-in-out duration-300 capitalize text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 flex flex-row gap-2 items-center justify-between hover:bg-white hover:text-black active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md',
         className
       )}
     >

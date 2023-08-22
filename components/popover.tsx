@@ -55,7 +55,7 @@ const Popover = ({
           >
             <HPopover.Panel className="absolute left-1/2 z-10 mt-3 -translate-x-1/2 transform sm:px-0">
               <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                <div className="relative flex flex-col bg-white p-2">
+                <div className="relative flex flex-col bg-white p-2 w-max">
                   {children}
                 </div>
               </div>

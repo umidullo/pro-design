@@ -28,10 +28,11 @@ const Header = () => {
     };
   }, []);
 
+  // bg-[#04040E]
   return (
     <header
       className={`transition-colors sticky top-0 z-10 ${
-        stick ? 'bg-[#04040E] shadow-lg' : ''
+        stick ? ' shadow-lg backdrop-blur-lg bg-black/50' : ''
       }`}
     >
       <Wrapper className="py-4 flex items-center justify-between relative">

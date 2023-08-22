@@ -1,4 +1,5 @@
 {
+  "magic": "Bu yerda pro-dizayn kompaniyasi haqida muhim ma'lumotlarga ega super zamonaviy minimalistik dizayn bo'ladi.",
   "buttons": {
     "order": "buyurtma bering",
     "promo": "shouril",
@@ -17,6 +18,20 @@
     "services": "xizmatlar",
     "works": "ishlar",
     "about": "biz haqimizda",
-    "contacts": "kontaktlar"
-  }
+    "contacts": "kontaktlar",
+    "info": "Ma`lumot"
+  },
+  "nav_items": {
+    "ui_ux": "UX/UI dizayn",
+    "motion": "Moushen grafika",
+    "branding": "Brending",
+    "vfx": "VFX",
+    "interior": "Interyer dizayni",
+    "web": "Veb",
+    "mobile": "Mobil ilovalar",
+    "vacancy": "Bo'sh is o'rinlari",
+    "com_offer": "Tijorat taklifi",
+    "adress": "Toshkent, Xushnavo 6B"
+  },
+  "footer": "Biz animatsiya, dizayn, 3D modellashtirish va vizualizatsiya sohasida 5 yildan ortiq tajribaga ega professional dizayn jamoasimiz."
 }
