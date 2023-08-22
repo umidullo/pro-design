@@ -1,5 +1,4 @@
 import Clients from '@/components/clients';
-import Layout from '@/components/layout';
 import Portfolio from '@/components/portfolio';
 import Promo from '@/components/promo';
 import Services from '@/components/services';
@@ -22,11 +21,11 @@ export default function Home({
   posts,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <Layout>
+    <>
       <Promo />
       <Services />
       <Portfolio posts={posts} />
       <Clients />
-    </Layout>
+    </>
   );
 }

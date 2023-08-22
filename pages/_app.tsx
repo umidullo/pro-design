@@ -5,6 +5,7 @@ import { appWithTranslation } from 'next-i18next';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import Layout from '@/components/layout';
 
 NProgress.configure({ showSpinner: false });
 
@@ -39,7 +40,9 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
