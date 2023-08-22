@@ -153,7 +153,10 @@ const Footer = () => {
         ))}
       </Wrapper>
       <Wrapper className="max-w-6xl mt-10">
-        <p className="text-xs" onClick={(e) => hiddenFeatureHandler(e)}>
+        <p
+          className="text-xs text-center lg:text-start"
+          onClick={(e) => hiddenFeatureHandler(e)}
+        >
           © 2023 ProDesign team.
         </p>
       </Wrapper>
