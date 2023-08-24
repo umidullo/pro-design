@@ -63,7 +63,7 @@ const Nav = () => {
                 <Link
                   key={item.path}
                   href={item.path}
-                  className="capitalize flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 text-sm font-medium text-gray-900 text-center"
+                  className="capitalize flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-white/20 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 text-sm font-medium text-center"
                 >
                   {t(item.title)}
                 </Link>

@@ -21,7 +21,7 @@ const PortfolioCard = ({
   return (
     <Link
       key={id}
-      className="relative col-span-1 rounded-lg aspect-[2/1] flex items-end justify-start overflow-hidden lg:group"
+      className="relative col-span-1 rounded-lg aspect-[2/1] flex items-end justify-start overflow-hidden"
       href={'/' + slug}
     >
       {!!is_video ? (
@@ -42,7 +42,7 @@ const PortfolioCard = ({
           className="w-full h-full object-cover"
         />
       )}
-      <div className="p-4 lg:p-10 z-[2] lg:opacity-0 w-full h-full bg-gradient-to-b from-black/30 to-black/60 flex items-end transition-opacity lg:group-hover:opacity-100">
+      <div className="p-4 md:p-10 z-[2] md:opacity-0 w-full h-full bg-gradient-to-b from-black/30 to-black/60 flex items-end transition-opacity md:hover:opacity-100">
         <div className="max-w-sm">
           <p className="text-base mb-1 lg:mb-2">Website</p>
           <h4 className="text-xl lg:text-3xl font-semibold lg:font-medium">

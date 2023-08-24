@@ -82,16 +82,16 @@ const footer_nav = [
 const Footer = () => {
   const { t } = useTranslation();
 
-  const hiddenFeatureHandler = (
-    e: React.MouseEvent<HTMLParagraphElement, MouseEvent>
-  ) => {
-    e.stopPropagation();
-    if (e.shiftKey) {
-      if (window) {
-        window.open('https://t.me/umidullo');
-      }
-    }
-  };
+  // const hiddenFeatureHandler = (
+  //   e: React.MouseEvent<HTMLParagraphElement, MouseEvent>
+  // ) => {
+  //   e.stopPropagation();
+  //   if (e.shiftKey) {
+  //     if (window) {
+  //       window.open('https://t.me/umidullo');
+  //     }
+  //   }
+  // };
 
   return (
     <footer className="pt-10 pb-12 text-[#888888] border-t border-[#333]">
@@ -155,7 +155,7 @@ const Footer = () => {
       <Wrapper className="max-w-6xl mt-10">
         <p
           className="text-xs text-center lg:text-start"
-          onClick={(e) => hiddenFeatureHandler(e)}
+          // onClick={(e) => hiddenFeatureHandler(e)}
         >
           © 2023 ProDesign team.
         </p>
