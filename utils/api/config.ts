@@ -7,7 +7,7 @@ export const fetchData = async (
     const response = await fetch(`https://pro-design.team/api/v1/${path}`, {
       method: 'GET',
       headers: {
-        'Accept-Language': locale ?? 'uz',
+        'Accept-Language': locale ?? 'ru',
       },
     });
     return response.json();
