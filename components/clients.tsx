@@ -1,8 +1,17 @@
+import ClientsImage from '@/components/clients-image';
 import BlockTitle from '@/components/ui/block-title';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 import Marquee from 'react-fast-marquee';
-import Image from 'next/image';
+
+const images = [
+  '/temp/1.png',
+  '/temp/2.png',
+  '/temp/3.png',
+  '/temp/4.png',
+  '/temp/5.png',
+  '/temp/6.png',
+];
 
 const Clients = () => {
   const { t } = useTranslation();
@@ -19,48 +28,9 @@ const Clients = () => {
           className="my-3"
           speed={30}
         >
-          <Image
-            src="/temp/1.png"
-            alt="client"
-            height={60}
-            width={100}
-            className="mx-3"
-          />
-          <Image
-            src="/temp/2.png"
-            alt="client"
-            height={60}
-            width={100}
-            className="mx-3"
-          />
-          <Image
-            src="/temp/3.png"
-            alt="client"
-            height={60}
-            width={100}
-            className="mx-3"
-          />
-          <Image
-            src="/temp/4.png"
-            alt="client"
-            height={60}
-            width={100}
-            className="mx-3"
-          />
-          <Image
-            src="/temp/5.png"
-            alt="client"
-            height={60}
-            width={100}
-            className="mx-3"
-          />
-          <Image
-            src="/temp/6.png"
-            alt="client"
-            height={60}
-            width={100}
-            className="mx-3"
-          />
+          {images.map((item) => (
+            <ClientsImage src={item} key={item} />
+          ))}
         </Marquee>
       </div>
     </div>

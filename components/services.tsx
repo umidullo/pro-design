@@ -1,4 +1,3 @@
-import BlurCircle from '@/components/blur-circle';
 import BlockTitle from '@/components/ui/block-title';
 import Button from '@/components/ui/button';
 import { ArrowIcon } from '@/components/ui/icon';
@@ -11,10 +10,8 @@ const Services = () => {
 
   return (
     <Wrapper className="relative">
-      {/* <BlurCircle className="bg-lime-500 top-12 left-1/2 -translate-x-96" /> */}
-      {/* <BlurCircle className="bg-fuchsia-500 -top-52 right-0" /> */}
       <BlockTitle>{t('b_titles.services')}</BlockTitle>
-      <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 aspect-square lg:aspect-auto lg:h-[calc(100vh-132px)] max-h-[730px] py-4 mx-auto">
+      <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 aspect-square lg:aspect-auto lg:h-[700px] py-4 mx-auto">
         <div className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 bg-blue-900 rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start">
           <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
           <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3">
