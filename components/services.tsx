@@ -12,7 +12,7 @@ const Services = () => {
     <Wrapper className="relative">
       <BlockTitle>{t('b_titles.services')}</BlockTitle>
       <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 aspect-square lg:aspect-auto lg:h-[700px] py-4 mx-auto">
-        <div className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start bg-[url('/ui-ux.jpg')] bg-cover bg-bottom">
+        <div className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start lg:bg-[url('/ui-ux.jpg')] bg-[url('/ui-ux-mobile.jpg')] bg-cover lg:bg-bottom bg-top">
           <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
           <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3">
             Advanced training in executing an effective background inbound
@@ -22,8 +22,10 @@ const Services = () => {
             {t('buttons.goto')}
           </Button>
         </div>
-        <div className="lg:col-start-2 lg:col-end-4 lg:row-start-1 lg:row-end-2 bg-blue-900 rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start">
-          <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
+        <div className="lg:col-start-2 lg:col-end-4 lg:row-start-1 lg:row-end-2 bg-[url('/branding.png')] bg-cover bg-center rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start">
+          <h3 className="text-base lg:text-3xl font-semibold">
+            Моушн графика, Брендинг
+          </h3>
           <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3 w-[320px]">
             Advanced training in executing an effective background inbound
             marketing strategy.
@@ -32,7 +34,7 @@ const Services = () => {
             {t('buttons.goto')}
           </Button>
         </div>
-        <div className="lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3 bg-blue-900 rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start">
+        <div className="lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3 bg-[url('/vfx.png')] bg-cover bg-center rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start">
           <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
           <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3 w-fit">
             Advanced training in executing an effective background inbound
@@ -42,7 +44,7 @@ const Services = () => {
             {t('buttons.goto')}
           </Button>
         </div>
-        <div className="lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-3 bg-blue-900 rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start">
+        <div className="lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-3 bg-[url('/arx-viz.png')] bg-cover bg-center rounded-3xl lg:p-10 grid justify-items-center content-center lg:justify-items-start lg:content-start">
           <h3 className="text-base lg:text-3xl font-semibold">UX/UI дизайн</h3>
           <h4 className="hidden lg:block mt-3 mb-6 text-base line-clamp-3 w-fit">
             Advanced training in executing an effective background inbound

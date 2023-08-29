@@ -6,8 +6,11 @@ import Wrapper from '@/components/ui/wrapper';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 
-const Portfolio = ({ posts }: { posts: Record<string, unknown>[] }) => {
-  console.log('Portfolio ~ posts:', posts);
+function Portfolio({
+  posts,
+}: {
+  posts: Record<string, unknown>[];
+}): React.JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -20,7 +23,8 @@ const Portfolio = ({ posts }: { posts: Record<string, unknown>[] }) => {
             image={post.image}
             title={post.title}
             id={post.id}
-            slug={post.slug}
+            // slug={post.slug}
+            slug={post.id}
             is_video={post.is_video}
             video={post.video}
           />
@@ -34,6 +38,6 @@ const Portfolio = ({ posts }: { posts: Record<string, unknown>[] }) => {
       </Button>
     </Wrapper>
   );
-};
+}
 
 export default Portfolio;
