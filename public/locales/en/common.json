@@ -33,5 +33,13 @@
     "com_offer": "Commertial offer",
     "adress": "Khushnavo 5B, Tashkent"
   },
-  "footer": "We are a professional design team with over 5 years of experience in animation, design, 3D modeling and visualization."
+  "footer": "We are a professional design team with over 5 years of experience in animation, design, 3D modeling and visualization.",
+  "portfolio_page": {
+    "about": "About project",
+    "client": "Customer",
+    "category": "Category",
+    "date": "Year",
+    "service": "Services",
+    "author": "Author"
+  }
 }

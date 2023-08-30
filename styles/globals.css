@@ -39,3 +39,9 @@
 .page_container {
   @apply grid grid-cols-1 gap-4 lg:gap-5;
 }
+
+.text_container {
+  @apply w-full px-4 lg:px-0 lg:w-[700px] mx-auto py-12 
+  [&>h4]:text-center [&>h4]:text-2xl [&>h4:lg]:text-3xl [&>h4]:font-medium [&>h4]:mb-3
+  [&>p]:text-center [&>p]:text-base [&>p]:lg:text-lg [&>p]:font-light;
+}

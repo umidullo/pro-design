@@ -25,7 +25,7 @@ function Portfolio({
             id={post.id}
             // slug={post.slug}
             slug={post.id}
-            is_video={post.is_video}
+            categoryName={post.categoryName}
             video={post.video}
           />
         ))}

@@ -6,8 +6,8 @@ type PortfolioCardType = {
   title: string;
   id: number;
   slug: string;
-  is_video: boolean;
   video?: string;
+  categoryName: string;
 };
 
 const PortfolioCard = ({
@@ -15,8 +15,8 @@ const PortfolioCard = ({
   title,
   id,
   slug,
-  is_video,
   video,
+  categoryName,
 }: PortfolioCardType) => {
   return (
     <Link
@@ -24,12 +24,13 @@ const PortfolioCard = ({
       className="relative col-span-1 rounded-lg aspect-[2/1] flex items-end justify-start overflow-hidden"
       href={'/portfolio/' + slug}
     >
-      {!!is_video ? (
+      {video ? (
         <video
           className="absolute w-full h-full object-cover"
           loop
           autoPlay
           muted
+          poster={`https://pro-design.team/storage/${image}`}
         >
           <source src={`https://pro-design.team/storage/${video}`} />
         </video>
@@ -43,9 +44,9 @@ const PortfolioCard = ({
         />
       )}
       <div className="p-4 md:p-10 z-[2] md:opacity-0 w-full h-full bg-gradient-to-b from-primary/30 to-primary/60 flex items-end transition-opacity md:hover:opacity-100">
-        <div className="max-w-sm">
-          <p className="text-base mb-1 lg:mb-2">Website</p>
-          <h4 className="text-xl lg:text-3xl font-semibold lg:font-medium">
+        <div className="w-full">
+          <p className="text-base mb-1 lg:mb-2">{categoryName}</p>
+          <h4 className="text-xl lg:text-3xl font-semibold lg:font-medium w-full lg:w-1/2">
             {title}
           </h4>
         </div>

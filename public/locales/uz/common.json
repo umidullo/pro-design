@@ -33,5 +33,13 @@
     "com_offer": "Tijorat taklifi",
     "adress": "Toshkent, Xushnavo 6B"
   },
-  "footer": "Biz animatsiya, dizayn, 3D modellashtirish va vizualizatsiya sohasida 5 yildan ortiq tajribaga ega professional dizayn jamoasimiz."
+  "footer": "Biz animatsiya, dizayn, 3D modellashtirish va vizualizatsiya sohasida 5 yildan ortiq tajribaga ega professional dizayn jamoasimiz.",
+  "portfolio_page": {
+    "about": "Loyiha haqida",
+    "client": "Mijoz",
+    "category": "Turkum",
+    "date": "Yil",
+    "service": "Xizmatlar",
+    "author": "Muallif"
+  }
 }

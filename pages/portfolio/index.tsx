@@ -33,7 +33,7 @@ export default function Page({
             id={post.id}
             slug={post.id}
             // slug={post.slug}
-            is_video={post.is_video}
+            categoryName={post.categoryName}
             video={post.video}
           />
         ))}
