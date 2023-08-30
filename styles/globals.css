@@ -35,3 +35,7 @@
       -ms-transform: rotate(3deg) translate(0px, -4px);
           transform: rotate(3deg) translate(0px, -4px);
 }
+
+.page_container {
+  @apply grid grid-cols-1 gap-4 lg:gap-5;
+}

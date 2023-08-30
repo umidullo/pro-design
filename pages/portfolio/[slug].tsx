@@ -11,7 +11,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
 
   const data = await fetchData(`posts/${context.params.slug}`, context.locale);
-  console.log('constgetServerSideProps:GetServerSideProps= ~ data:', data);
+
   if (!data) {
     return {
       notFound: true,
@@ -29,10 +29,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function Page({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log('data:', data);
   return (
     <>
       <div className="relative w-screen h-[calc(100vh/3*2)] -mt-[74px] [&>img]:object-cover">
-        <Image src={'/branding.png'} alt={'main image of work'} fill />
+        <Image
+          src={`https://pro-design.team/storage/${data.image}`}
+          alt={'main image of work'}
+          fill
+        />
         <div className="absolute top-0 left-0 bottom-0 right-0 bg-black/60 z-0" />
       </div>
       <Wrapper>
@@ -51,16 +56,19 @@ export default function Page({
             </h3>
             <ul className="w-80 space-y-3 [&>span]:text-lg">
               <li className="flex justify-between items-center">
-                <span>Заказчик</span> <span>PlanBaby clinic</span>
+                <span>Заказчик</span> <span>{data.client_name}</span>
               </li>
               <li className="flex justify-between items-center">
                 <span>Категория</span> <span>UX/UI дизайн</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>Год</span> <span>2022</span>
+                <span>Год</span> <span>{data.date}</span>
               </li>
               <li className="flex justify-between items-center">
                 <span>Услуги</span> <span>Разработка сайта</span>
+              </li>
+              <li className="flex justify-between items-center">
+                <span>Автор</span> <span>{data.author_name}</span>
               </li>
             </ul>
           </div>
