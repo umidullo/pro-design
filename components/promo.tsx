@@ -19,7 +19,7 @@ const Promo = () => {
           </Button> */}
         </div>
         <video
-          src="https://pro-design.team/showreel_1.mp4"
+          src="https://prodesignstudio.uz/showreel_1.mp4"
           loop
           autoPlay
           muted

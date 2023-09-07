@@ -22,7 +22,7 @@ const PortfolioCard = ({
     <Link
       key={id}
       className="relative col-span-1 rounded-lg aspect-[2/1] flex items-end justify-start overflow-hidden"
-      href={'/portfolio/' + slug}
+      href={"/portfolio/" + slug}
     >
       {video ? (
         <video
@@ -30,14 +30,14 @@ const PortfolioCard = ({
           loop
           autoPlay
           muted
-          poster={`https://pro-design.team/storage/${image}`}
+          poster={`https://prodesignstudio.uz/storage/${image}`}
         >
-          <source src={`https://pro-design.team/storage/${video}`} />
+          <source src={`https://prodesignstudio.uz/storage/${video}`} />
         </video>
       ) : (
         <Image
-          src={`https://pro-design.team/storage/${image}`}
-          alt={'image'}
+          src={`https://prodesignstudio.uz/storage/${image}`}
+          alt={"image"}
           fill
           sizes="100%"
           className="w-full h-full object-cover"

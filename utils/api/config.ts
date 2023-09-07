@@ -4,10 +4,10 @@ export const fetchData = async (
   params?: Record<string, unknown>
 ) => {
   try {
-    const response = await fetch(`https://pro-design.team/api/v1/${path}`, {
-      method: 'GET',
+    const response = await fetch(`https://prodesignstudio.uz/api/v1/${path}`, {
+      method: "GET",
       headers: {
-        'Accept-Language': locale ?? 'ru',
+        "Accept-Language": locale ?? "ru",
       },
     });
     return response.json();

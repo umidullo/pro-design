@@ -30,7 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function Page({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log('data:', data);
+
   const { t } = useTranslation();
 
   return (
@@ -42,14 +42,14 @@ export default function Page({
             loop
             autoPlay
             muted
-            poster={`https://pro-design.team/storage/${data.image}`}
+            poster={`https://prodesignstudio.uz/storage/${data.image}`}
           >
-            <source src={`https://pro-design.team/storage/${data.video}`} />
+            <source src={`https://prodesignstudio.uz/storage/${data.video}`} />
           </video>
         ) : (
           <Image
-            src={`https://pro-design.team/storage/${data.image}`}
-            alt={'main image of work'}
+            src={`https://prodesignstudio.uz/storage/${data.image}`}
+            alt={"main image of work"}
             fill
           />
         )}
@@ -61,7 +61,7 @@ export default function Page({
       <Wrapper>
         <div className="py-16 max-w-7xl mx-auto">
           <h3 className="mb-3 text-2xl lg:text-3xl font-medium text-center lg:text-start">
-            {t('portfolio_page.about')}
+            {t("portfolio_page.about")}
           </h3>
           <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-6">
             <p className="font-light text-base lg:text-lg w-full lg:w-7/12 text-justify lg:text-left">
@@ -69,22 +69,22 @@ export default function Page({
             </p>
             <ul className="w-full lg:max-w-xs space-y-3 [&>li>span]:text-base [&>li>span:lg]:text-lg">
               <li className="flex justify-between items-center">
-                <span>{t('portfolio_page.client')}</span>{' '}
+                <span>{t("portfolio_page.client")}</span>{" "}
                 <span>{data.client_name}</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>{t('portfolio_page.category')}</span>{' '}
+                <span>{t("portfolio_page.category")}</span>{" "}
                 <span>UX/UI дизайн</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>{t('portfolio_page.date')}</span> <span>{data.date}</span>
+                <span>{t("portfolio_page.date")}</span> <span>{data.date}</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>{t('portfolio_page.service')}</span>{' '}
+                <span>{t("portfolio_page.service")}</span>{" "}
                 <span>{data.content}</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>{t('portfolio_page.author')}</span>{' '}
+                <span>{t("portfolio_page.author")}</span>{" "}
                 <span>{data.author_name}</span>
               </li>
             </ul>

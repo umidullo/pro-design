@@ -77,21 +77,27 @@ const footer_nav = [
       },
     ],
   },
+  {
+    title: 'nav.info',
+    nav_items: [
+      {
+        title: 'nav.about',
+        path: '/info/about',
+      },
+      {
+        title: 'nav_items.vacancy',
+        path: '/info/career',
+      },
+      {
+        title: 'nav_items.com_offer',
+        path: '/info/terms',
+      },
+    ],
+  },
 ];
 
 const Footer = () => {
   const { t } = useTranslation();
-
-  // const hiddenFeatureHandler = (
-  //   e: React.MouseEvent<HTMLParagraphElement, MouseEvent>
-  // ) => {
-  //   e.stopPropagation();
-  //   if (e.shiftKey) {
-  //     if (window) {
-  //       window.open('https://t.me/umidullo');
-  //     }
-  //   }
-  // };
 
   return (
     <footer className="pt-10 pb-12 text-[#888888] border-t border-[#333]">
@@ -153,10 +159,7 @@ const Footer = () => {
         ))}
       </Wrapper>
       <Wrapper className="max-w-6xl mt-10">
-        <p
-          className="text-xs text-center lg:text-start"
-          // onClick={(e) => hiddenFeatureHandler(e)}
-        >
+        <p className="text-xs text-center lg:text-start">
           © 2023 ProDesign team.
         </p>
       </Wrapper>

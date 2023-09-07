@@ -5,7 +5,7 @@ const nextConfig = {
   // reactStrictMode: true,
   i18n,
   images: {
-    domains: ['pro-design.team'],
+    domains: ["prodesignstudio.uz"],
   },
 };
 
