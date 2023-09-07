@@ -19,12 +19,17 @@ const Promo = () => {
           </Button> */}
         </div>
         <video
-          src="https://prodesignstudio.uz/showreel_1.mp4"
+          poster="https://prodesignstudio.uz/storage/posts/showreel-img.png"
           loop
           autoPlay
           muted
           className="w-full h-full object-cover z-[-1]"
-        ></video>
+        >
+          <source
+            src="https://prodesignstudio.uz/storage/posts/showreel_1%20(1).mp4"
+            type="video/mp4"
+          ></source>
+        </video>
         <div className="absolute top-0 left-0 bottom-0 right-0 bg-black opacity-30 z-[-1]"></div>
       </div>
     </Wrapper>
