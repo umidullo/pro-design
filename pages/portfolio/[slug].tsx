@@ -35,7 +35,7 @@ export default function Page({
 
   return (
     <>
-      <div className="relative w-screen h-[calc(100vh/3*2)] -mt-[74px] [&>img]:object-cover">
+      <div className="relative h-[calc(100vh/3*2)] -mt-[74px] [&>img]:object-cover">
         {data.video ? (
           <video
             className="absolute w-full h-full object-cover"

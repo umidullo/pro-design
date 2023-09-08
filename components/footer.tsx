@@ -7,90 +7,82 @@ import React from 'react';
 
 const footer_nav = [
   {
-    title: 'nav.services',
+    title: "nav.services",
     nav_items: [
       {
-        title: 'nav_items.ui_ux',
-        path: '/services/ui-ux',
+        title: "nav_items.ui_ux",
+        path: "/services/ui-ux",
       },
       {
-        title: 'nav_items.motion',
-        path: '/services/motion-graphics',
+        title: "nav_items.motion",
+        path: "/services/motion-graphics",
       },
       {
-        title: 'nav_items.branding',
-        path: '/services/branding',
+        title: "nav_items.branding",
+        path: "/services/branding",
       },
       {
-        title: 'nav_items.vfx',
-        path: '/services/vfx',
+        title: "nav_items.vfx",
+        path: "/services/vfx",
       },
       {
-        title: 'nav_items.interior',
-        path: '/services/interior-design',
+        title: "nav_items.interior",
+        path: "/services/interior-design",
       },
     ],
   },
   {
-    title: 'nav.works',
+    title: "nav.works",
     nav_items: [
       {
-        title: 'nav_items.web',
-        path: '/portfolio/web',
+        title: "nav_items.web",
+        path: "/portfolio/web",
       },
       {
-        title: 'nav_items.motion',
-        path: '/portfolio/motion-design',
+        title: "nav_items.motion",
+        path: "/portfolio/motion-design",
       },
       {
-        title: 'nav_items.branding',
-        path: '/portfolio/branding',
+        title: "nav_items.branding",
+        path: "/portfolio/branding",
       },
       {
-        title: 'nav_items.vfx',
-        path: '/portfolio/vfx',
+        title: "nav_items.vfx",
+        path: "/portfolio/vfx",
       },
       {
-        title: 'nav_items.interior',
-        path: '/portfolio/interior-design',
+        title: "nav_items.interior",
+        path: "/portfolio/interior-design",
       },
       {
-        title: 'nav_items.mobile',
-        path: '/portfolio/mobile',
+        title: "nav_items.mobile",
+        path: "/portfolio/mobile",
       },
     ],
   },
   {
-    title: 'nav.info',
+    title: "nav.info",
     nav_items: [
       {
-        title: 'nav.about',
-        path: '/info/about',
+        title: "nav.about",
+        path: "/info/about",
       },
       {
-        title: 'nav_items.vacancy',
-        path: '/info/career',
+        title: "nav_items.vacancy",
+        path: "/info/career",
       },
       {
-        title: 'nav_items.com_offer',
-        path: '/info/terms',
+        title: "nav_items.com_offer",
+        path: "/info/terms",
       },
     ],
   },
   {
-    title: 'nav.info',
+    title: "nav.contacts",
     nav_items: [
       {
-        title: 'nav.about',
-        path: '/info/about',
-      },
-      {
-        title: 'nav_items.vacancy',
-        path: '/info/career',
-      },
-      {
-        title: 'nav_items.com_offer',
-        path: '/info/terms',
+        title: "nav_items.adress",
+        path: "/info/about",
       },
     ],
   },
@@ -101,7 +93,7 @@ const Footer = () => {
 
   return (
     <footer className="pt-10 pb-12 text-[#888888] border-t border-[#333]">
-      <Wrapper className="max-w-6xl flex items-start justify-between flex-col lg:flex-row gap-10 lg:gap-20">
+      <Wrapper className="flex items-start justify-between flex-col lg:flex-row gap-10 lg:gap-20">
         <div className="w-full max-w-sm order-last lg:order-none flex items-center flex-col lg:items-start">
           <Image
             src="/logo.png"
@@ -110,7 +102,7 @@ const Footer = () => {
             height={31}
             quality={100}
           />
-          <h6 className="mt-3 text-center lg:text-start">{t('footer')}</h6>
+          <h6 className="mt-3 text-center lg:text-start">{t("footer")}</h6>
           <div className="flex gap-8 mt-6 transition-all">
             <Link
               href="https://www.facebook.com/prodesignofficial"
@@ -158,7 +150,7 @@ const Footer = () => {
           </div>
         ))}
       </Wrapper>
-      <Wrapper className="max-w-6xl mt-10">
+      <Wrapper className="mt-10">
         <p className="text-xs text-center lg:text-start">
           © 2023 ProDesign team.
         </p>

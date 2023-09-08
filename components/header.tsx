@@ -9,16 +9,18 @@ import {
   SparklesIcon,
 } from '@/components/ui/icon';
 import Wrapper from '@/components/ui/wrapper';
-import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { SetStateAction, useEffect, useState } from 'react';
+import { Dialog } from "@headlessui/react";
+import { useTranslation } from "next-i18next";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { SetStateAction, useEffect, useState } from "react";
 
 const Header = () => {
   const { t } = useTranslation();
   const [stick, setStick] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -30,21 +32,21 @@ const Header = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     };
   }, [isOpen]);
 
@@ -56,20 +58,20 @@ const Header = () => {
     <header
       className={`z-10 transition-all ${
         isOpen
-          ? 'fixed w-screen h-screen bg-black'
+          ? "fixed w-screen h-screen bg-black"
           : `
             sticky transition-colors top-0 ${
-              stick ? 'shadow-lg backdrop-blur-lg bg-primary/50' : ''
+              stick ? "shadow-lg backdrop-blur-lg bg-primary/50" : ""
             } 
           `
       }`}
     >
       <Wrapper className="py-4 flex items-center justify-between relative flex-col lg:flex-row">
         <div className="flex w-full justify-between items-center lg:w-fit">
-          <Link href={'/'}>
+          <Link href={"/"}>
             <Image
               src="/logo.png"
-              alt={'site logo'}
+              alt={"site logo"}
               width={193}
               height={31}
               quality={100}
@@ -91,10 +93,11 @@ const Header = () => {
         <div className="hidden lg:flex gap-3">
           <LocaleSwitcher />
           <Button
+            onClick={() => setIsModalOpen(true)}
             icon={<SparklesIcon className="w-5 h-5" />}
             className="rounded-full"
           >
-            {t('buttons.order')}
+            {t("buttons.order")}
           </Button>
         </div>
         {/* <div
@@ -128,6 +131,26 @@ const Header = () => {
           </Link>
         </div> */}
       </Wrapper>
+      <Dialog
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        className="relative z-50"
+      >
+        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+        <div className="fixed inset-0 flex w-screen items-center justify-center">
+          <Dialog.Panel
+            as="div"
+            className="backdrop-blur-md bg-[#121212] w-1/3"
+          >
+            <form>
+              <input type="text" />
+            </form>
+
+            <button onClick={() => setIsModalOpen(false)}>Deactivate</button>
+            <button onClick={() => setIsModalOpen(false)}>Cancel</button>
+          </Dialog.Panel>
+        </div>
+      </Dialog>
     </header>
   );
 };
