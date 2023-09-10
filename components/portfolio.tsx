@@ -4,7 +4,8 @@ import Button from '@/components/ui/button';
 import { ArrowIcon } from '@/components/ui/icon';
 import Wrapper from '@/components/ui/wrapper';
 import { useTranslation } from 'next-i18next';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
 function Portfolio({
   posts,
@@ -30,13 +31,16 @@ function Portfolio({
           />
         ))}
       </div>
-      {/* <Button
-        icon={<ArrowIcon className="w-5 h-5 stroke-2" />}
-        className="mx-auto mt-4"
-
-      >
-        {t('buttons.portfolio')}
-      </Button> */}
+      {/* link button below should be a component */}
+      <div className="flex justify-center mx-auto mt-4">
+        <Link
+          href="/portfolio"
+          className="inline-flex transition-all ease-in-out duration-300 capitalize text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 flex-row gap-2 items-center justify-between hover:bg-white hover:text-black active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md"
+        >
+          {t("buttons.portfolio")}
+          <ArrowIcon className="w-5 h-5 stroke-2" />
+        </Link>
+      </div>
     </Wrapper>
   );
 }
