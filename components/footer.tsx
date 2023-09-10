@@ -82,7 +82,15 @@ const footer_nav = [
     nav_items: [
       {
         title: "nav_items.adress",
-        path: "/info/about",
+        path: "https://yandex.uz/maps/-/CDQpZZ~n",
+      },
+      {
+        title: "nav_items.tel_1",
+        path: "tel:998942224488",
+      },
+      {
+        title: "nav_items.tel_2",
+        path: "tel:998942223366",
       },
     ],
   },
@@ -93,7 +101,7 @@ const Footer = () => {
 
   return (
     <footer className="pt-10 pb-12 text-[#888888] border-t border-[#333]">
-      <Wrapper className="flex items-start justify-between flex-col lg:flex-row gap-10 lg:gap-20">
+      <Wrapper className="gap-10 flex items-center lg:items-start flex-col lg:flex-row  justify-between">
         <div className="w-full max-w-sm order-last lg:order-none flex items-center flex-col lg:items-start">
           <Image
             src="/logo.png"
@@ -130,25 +138,27 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        {footer_nav.map((block, i) => (
-          <div key={i} className="w-full lg:w-fit">
-            <h5 className="mb-3 text-white text-xl font-bold text-center lg:text-start capitalize">
-              {t(block.title)}
-            </h5>
-            <ul className="space-y-1">
-              {block.nav_items.map((item, j) => (
-                <li
-                  key={j}
-                  className="text-center lg:text-start lg:w-max w-full"
-                >
-                  <Link href={item.path} className="hover:text-white">
-                    {t(item.title)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div className="mb-10 lg:m-0 gap-9 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
+          {footer_nav.map((block, i) => (
+            <div key={i} className="">
+              <h5 className="mb-3 text-white text-xl font-bold text-center lg:text-start capitalize">
+                {t(block.title)}
+              </h5>
+              <ul className="space-y-1">
+                {block.nav_items.map((item, j) => (
+                  <li
+                    key={j}
+                    className="text-center lg:text-start lg:w-max w-full"
+                  >
+                    <Link href={item.path} className="hover:text-white">
+                      {t(item.title)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </Wrapper>
       <Wrapper className="mt-10">
         <p className="text-xs text-center lg:text-start">
