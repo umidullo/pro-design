@@ -1,20 +1,15 @@
 import LocaleSwitcher from '@/components/locale-switcher';
 import MobileNav from '@/components/mobile-nav';
 import Nav from '@/components/nav';
-import Button from '@/components/ui/button';
-import {
-  BurgerIcon,
-  CloseIcon,
-  SocialIcon,
-  SparklesIcon,
-} from '@/components/ui/icon';
-import Wrapper from '@/components/ui/wrapper';
+import { BurgerIcon, CloseIcon, SparklesIcon } from "@/components/ui/icon";
+import Wrapper from "@/components/ui/wrapper";
+import { Button } from "@/shared/ui";
 import { Dialog } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { SetStateAction, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -53,6 +48,11 @@ const Header = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [router]);
+
+  const formHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(e.target);
+  };
 
   return (
     <header
@@ -136,18 +136,40 @@ const Header = () => {
         onClose={() => setIsModalOpen(false)}
         className="relative z-50"
       >
-        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+          aria-hidden="true"
+        />
         <div className="fixed inset-0 flex w-screen items-center justify-center">
-          <Dialog.Panel
-            as="div"
-            className="backdrop-blur-md bg-[#121212] w-1/3"
-          >
-            <form>
-              <input type="text" />
+          <Dialog.Panel as="div" className="bg-[#121212] w-1/3 p-9 rounded-2xl">
+            <p className="text-lg font-medium">
+              Напишите нам, наши специалисты свяжутся с вами в ближайшее время
+            </p>
+            <form
+              className="flex flex-col w-full gap-6 mt-8"
+              onSubmit={formHandler}
+            >
+              <input
+                type="text"
+                placeholder="Имя*"
+                className="text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 
+                 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl"
+              />
+              <input
+                type="number"
+                placeholder="Телефон*"
+                className="text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 
+                 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl"
+              />
+              <textarea
+                placeholder="Пару слов о проекте...*"
+                className="text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 
+                 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl"
+              />
+              <Button type="submit" className="justify-center">
+                Submit
+              </Button>
             </form>
-
-            <button onClick={() => setIsModalOpen(false)}>Deactivate</button>
-            <button onClick={() => setIsModalOpen(false)}>Cancel</button>
           </Dialog.Panel>
         </div>
       </Dialog>

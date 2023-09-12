@@ -1,8 +1,6 @@
-import Button from '@/components/ui/button';
-import { PlayIcon } from '@/components/ui/icon';
-import Wrapper from '@/components/ui/wrapper';
-import { useTranslation } from 'next-i18next';
-import React from 'react';
+import Wrapper from "@/components/ui/wrapper";
+import { useTranslation } from "next-i18next";
+import React from "react";
 
 const Promo = () => {
   const { t } = useTranslation();

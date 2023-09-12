@@ -30,6 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function Page({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log("data:", data);
 
   const { t } = useTranslation();
 
@@ -55,7 +56,9 @@ export default function Page({
         )}
         <div className="absolute top-0 left-0 bottom-0 right-0 bg-black/60 z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-          <h2 className="text-3xl lg:text-5xl font-semibold">{data.title}</h2>
+          <h2 className="text-3xl lg:text-5xl font-semibold text-center">
+            {data.title}
+          </h2>
         </div>
       </div>
       <Wrapper>
@@ -69,22 +72,23 @@ export default function Page({
             </p>
             <ul className="w-full lg:max-w-xs space-y-3 [&>li>span]:text-base [&>li>span:lg]:text-lg">
               <li className="flex justify-between items-center">
-                <span>{t("portfolio_page.client")}</span>{" "}
+                <span>{t("portfolio_page.client")}</span>
                 <span>{data.client_name}</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>{t("portfolio_page.category")}</span>{" "}
-                <span>UX/UI дизайн</span>
+                <span>{t("portfolio_page.category")}</span>
+                <span>{data.category_name ?? ""}</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>{t("portfolio_page.date")}</span> <span>{data.date}</span>
+                <span>{t("portfolio_page.date")}</span>{" "}
+                <span>{data.date.slice(0, 4)}</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>{t("portfolio_page.service")}</span>{" "}
+                <span>{t("portfolio_page.service")}</span>
                 <span>{data.content}</span>
               </li>
               <li className="flex justify-between items-center">
-                <span>{t("portfolio_page.author")}</span>{" "}
+                <span>{t("portfolio_page.author")}</span>
                 <span>{data.author_name}</span>
               </li>
             </ul>
