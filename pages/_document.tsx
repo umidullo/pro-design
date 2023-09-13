@@ -2,6 +2,8 @@ import { Head, Html, Main, NextScript } from "next/document";
 import Script from "next/script";
 
 export default function Document() {
+  console.log(process.env.NEXT_PUBLIC_YANDEX_METRIKA);
+
   return (
     <Html>
       <Head />
@@ -18,7 +20,7 @@ export default function Document() {
           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-          ym(${process.env.NEXT_PUBLIC_YANDEX_METRIKA}, "init", {
+          ym(89915177, "init", {
                 clickmap:true,
                 trackLinks:true,
                 accurateTrackBounce:true,
@@ -30,7 +32,7 @@ export default function Document() {
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`https://mc.yandex.ru/watch/${process.env.NEXT_PUBLIC_YANDEX_METRIKA}`}
+            src={`https://mc.yandex.ru/watch/89915177`}
             style={{ position: "absolute", left: "-9999px" }}
             alt="yandex"
           />

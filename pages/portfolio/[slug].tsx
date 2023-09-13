@@ -30,8 +30,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function Page({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log("data:", data);
-
   const { t } = useTranslation();
 
   return (
