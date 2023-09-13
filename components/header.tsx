@@ -5,11 +5,20 @@ import { BurgerIcon, CloseIcon, SparklesIcon } from "@/components/ui/icon";
 import Wrapper from "@/components/ui/wrapper";
 import { Button } from "@/shared/ui";
 import { Dialog } from "@headlessui/react";
+import axios from "axios";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FormEvent, useEffect, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { twMerge } from "tailwind-merge";
+
+type FormInputs = {
+  fullName: string;
+  phoneNumber: number;
+  summary: string;
+};
 
 const Header = () => {
   const { t } = useTranslation();
@@ -49,9 +58,31 @@ const Header = () => {
     setIsOpen(false);
   }, [router]);
 
-  const formHandler = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(e.target);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormInputs>();
+
+  const config = {
+    baseUrl: "https://api.telegram.org/",
+    method: "sendMessage",
+    path: process.env.NEXT_PUBLIC_PATH,
+    chat_id: process.env.NEXT_PUBLIC_CHAT_ID,
+  };
+
+  const url = `${config.baseUrl}${config.path}${config.method}`;
+
+  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    const text = `<b>#message</b>\n<b>Full name: ${data.fullName}</b>\n<b>Phone number: ${data.phoneNumber}</b>\n<b>Message: ${data.summary}</b>`;
+    const params = { chat_id: config.chat_id, parse_mode: "HTML", text };
+    const response = await axios.get(url, { params });
+    if (response.data.ok) {
+      alert("thanks for your feedback");
+    }
+    reset();
+    setIsModalOpen(false);
   };
 
   return (
@@ -94,42 +125,12 @@ const Header = () => {
           <LocaleSwitcher />
           <Button
             onClick={() => setIsModalOpen(true)}
-            icon={<SparklesIcon className="w-5 h-5" />}
+            icon={<SparklesIcon className="w-5 h-5 ml-2" />}
             className="rounded-full"
           >
             {t("buttons.order")}
           </Button>
         </div>
-        {/* <div
-          className={`gap-8 mt-6 transition-all ${
-            isOpen ? 'flex mb-9' : 'hidden'
-          }`}
-        >
-          <Link
-            href="https://www.facebook.com/prodesignofficial"
-            target="_blank"
-          >
-            <SocialIcon
-              name="fb"
-              className="w-8 h-8 fill-white transition-all"
-            />
-          </Link>
-          <Link href="https://t.me/prodesign_team" target="_blank">
-            <SocialIcon
-              name="tg"
-              className="w-8 h-8 fill-white transition-all"
-            />
-          </Link>
-          <Link
-            href="https://www.instagram.com/prodesign_team/"
-            target="_blank"
-          >
-            <SocialIcon
-              name="ig"
-              className="w-8 h-8 fill-white transition-all"
-            />
-          </Link>
-        </div> */}
       </Wrapper>
       <Dialog
         open={isModalOpen}
@@ -147,25 +148,58 @@ const Header = () => {
             </p>
             <form
               className="flex flex-col w-full gap-6 mt-8"
-              onSubmit={formHandler}
+              onSubmit={handleSubmit(onSubmit)}
             >
-              <input
-                type="text"
-                placeholder="Имя*"
-                className="text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 
-                 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl"
-              />
-              <input
-                type="number"
-                placeholder="Телефон*"
-                className="text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 
-                 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl"
-              />
-              <textarea
-                placeholder="Пару слов о проекте...*"
-                className="text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 
-                 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl"
-              />
+              <div className="flex flex-col">
+                <input
+                  {...register("fullName", { required: true })}
+                  type="text"
+                  placeholder="Имя*"
+                  className={twMerge(
+                    `text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl ${
+                      errors.fullName ? "border-red-500" : ""
+                    }`
+                  )}
+                />
+                {errors.fullName && (
+                  <span className="text-red-500 text-xs mt-1">
+                    This field is required
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-col">
+                <input
+                  {...register("phoneNumber", { required: true })}
+                  type="number"
+                  placeholder="Телефон*"
+                  className={twMerge(
+                    `text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl ${
+                      errors.phoneNumber ? "border-red-500" : ""
+                    }`
+                  )}
+                />
+                {errors.phoneNumber && (
+                  <span className="text-red-500 text-xs mt-1">
+                    This field is required
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-col">
+                <textarea
+                  {...register("summary", { required: true })}
+                  placeholder="Пару слов о проекте...*"
+                  className={twMerge(
+                    `text-lg text-white font-normal bg-transparent border border-white rounded-xl py-[10px] px-4 leading-5 active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-xl ${
+                      errors.summary ? "border-red-500" : ""
+                    }`
+                  )}
+                />
+                {errors.summary && (
+                  <span className="text-red-500 text-xs mt-1">
+                    This field is required
+                  </span>
+                )}
+              </div>
               <Button type="submit" className="justify-center">
                 Submit
               </Button>
