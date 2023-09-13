@@ -34,7 +34,7 @@ function Portfolio({
       <Button
         className="mx-auto"
         href="/portfolio"
-        icon={<ArrowIcon className="w-5 h-5 stroke-2" />}
+        icon={<ArrowIcon className="w-5 h-5 stroke-2 ml-2" />}
       >
         {t("buttons.portfolio")}
       </Button>

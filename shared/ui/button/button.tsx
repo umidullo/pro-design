@@ -13,7 +13,7 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          "w-fit py-[10px] px-4 leading-5 flex flex-row gap-2 items-center justify-between",
+          "w-fit py-[10px] px-4 leading-5 flex flex-row items-center justify-between",
       },
     },
     defaultVariants: {
