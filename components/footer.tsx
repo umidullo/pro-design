@@ -35,29 +35,33 @@ const footer_nav = [
     title: "nav.works",
     nav_items: [
       {
+        title: "nav_items.ui_ux",
+        path: "/portfolio?byCategory=1",
+      },
+      {
         title: "nav_items.web",
-        path: "/portfolio/web",
+        path: "/portfolio?byCategory=3",
       },
       {
         title: "nav_items.motion",
-        path: "/portfolio/motion-design",
+        path: "/portfolio?byCategory=5",
       },
       {
         title: "nav_items.branding",
-        path: "/portfolio/branding",
+        path: "/portfolio?byCategory=2",
       },
       {
         title: "nav_items.vfx",
-        path: "/portfolio/vfx",
+        path: "/portfolio?byCategory=6",
       },
       {
         title: "nav_items.interior",
-        path: "/portfolio/interior-design",
+        path: "/portfolio?byCategory=7",
       },
-      {
-        title: "nav_items.mobile",
-        path: "/portfolio/mobile",
-      },
+      // {
+      //   title: "nav_items.mobile",
+      //   path: "/portfolio/mobile",
+      // },
     ],
   },
   {
