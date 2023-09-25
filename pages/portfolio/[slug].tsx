@@ -69,9 +69,13 @@ export default function Page({
               {data.excerpt}
             </p>
             <ul className="w-full lg:max-w-xs space-y-3 [&>li>span]:text-base [&>li>span:lg]:text-lg">
-              <li className="flex justify-between items-center">
+              <li className="flex justify-between items-start">
                 <span>{t("portfolio_page.client")}</span>
-                <span>{data.client_name}</span>
+                <div className="flex justify-end flex-col items-end">
+                  {data.clients.map((author: string, i: number) => (
+                    <span key={i}>{author}</span>
+                  ))}
+                </div>
               </li>
               <li className="flex justify-between items-center">
                 <span>{t("portfolio_page.category")}</span>
@@ -85,9 +89,13 @@ export default function Page({
                 <span>{t("portfolio_page.service")}</span>
                 <span>{data.content}</span>
               </li>
-              <li className="flex justify-between items-center">
+              <li className="flex justify-between items-start">
                 <span>{t("portfolio_page.author")}</span>
-                <span>{data.author_name}</span>
+                <div className="flex justify-end flex-col items-end">
+                  {data.authors.map((author: string, i: number) => (
+                    <span key={i}>{author}</span>
+                  ))}
+                </div>
               </li>
             </ul>
           </div>
