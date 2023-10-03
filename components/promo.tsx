@@ -1,9 +1,9 @@
 import Wrapper from "@/components/ui/wrapper";
-import { useTranslation } from "next-i18next";
+// import { useTranslation } from "next-i18next";
 import React from "react";
 
 const Promo = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <Wrapper className="flex justify-between">
