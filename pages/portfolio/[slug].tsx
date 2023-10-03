@@ -35,12 +35,14 @@ export default function Page({
   return (
     <>
       <Head>
-        <title>{data.title}</title>
-        <meta property="og:image" content={`https://prodesignstudio.uz/storage/${data.image}`} />
+        <title>{data.title} | ProDesign Team</title>
+        <meta
+          property="og:image"
+          content={`https://prodesignstudio.uz/storage/${data.image}`}
+        />
         {/*<meta property="og:image:type" content="<generated>" />*/}
         {/*<meta property="og:image:width" content="<generated>" />*/}
         {/*<meta property="og:image:height" content="<generated>" />*/}
-
       </Head>
       <div className="relative h-[calc(100vh/3*2)] -mt-[74px] [&>img]:object-cover">
         {data.video ? (
@@ -77,14 +79,16 @@ export default function Page({
               {data.excerpt}
             </p>
             <ul className="w-full lg:max-w-xs space-y-3 [&>li>span]:text-base [&>li>span:lg]:text-lg">
-              {data.clients.length ? <li className="flex justify-between items-start">
-                <span>{t("portfolio_page.client")}</span>
-                <div className="flex justify-end flex-col items-end">
-                  {data.clients.map((author: string, i: number) => (
+              {data.clients.length ? (
+                <li className="flex justify-between items-start">
+                  <span>{t("portfolio_page.client")}</span>
+                  <div className="flex justify-end flex-col items-end">
+                    {data.clients.map((author: string, i: number) => (
                       <span key={i}>{author}</span>
-                  ))}
-                </div>
-              </li> : null}
+                    ))}
+                  </div>
+                </li>
+              ) : null}
               <li className="flex justify-between items-center">
                 <span>{t("portfolio_page.category")}</span>
                 <span>{data.category_name ?? ""}</span>
