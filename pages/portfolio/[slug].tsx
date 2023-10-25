@@ -12,7 +12,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       notFound: true,
     };
 
-  const data = await fetchData(`posts/${context.params.slug}`, context.locale);
+  const data = await fetchData({
+    path: `posts/${context.params.slug}`,
+    locale: context.locale,
+  });
 
   if (!data) {
     return {

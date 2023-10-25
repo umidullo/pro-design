@@ -39,7 +39,7 @@ const Popover = ({
             {title}
             <ChevronIcon
               className={`${
-                open ? 'rotate-180' : 'rotate-0'
+                open ? "rotate-180" : "rotate-0"
               } ml-2 h-5 w-5 transition duration-300 ease-in-out`}
               aria-hidden="true"
             />

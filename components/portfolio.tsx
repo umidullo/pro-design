@@ -4,13 +4,14 @@ import { ArrowIcon } from "@/components/ui/icon";
 import Wrapper from "@/components/ui/wrapper";
 import { Button } from "@/shared/ui";
 import { useTranslation } from "next-i18next";
-import Link from "next/link";
 import React from "react";
 
 function Portfolio({
   posts,
 }: {
-  posts: Record<string, unknown>[];
+  posts: {
+    data: Record<string, unknown>[];
+  };
 }): React.JSX.Element {
   const { t } = useTranslation();
 
@@ -18,7 +19,7 @@ function Portfolio({
     <Wrapper className="max-w-[100vw]">
       <BlockTitle>{t("b_titles.recents")}</BlockTitle>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-4">
-        {posts.map((post: any) => (
+        {posts.data.map((post: any) => (
           <PortfolioCard
             key={post.slug}
             image={post.image}

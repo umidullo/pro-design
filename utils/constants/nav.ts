@@ -35,6 +35,10 @@ export const nav = [
     title: "nav.works",
     sub_menu: [
       {
+        title: "nav_items.all",
+        path: "/portfolio",
+      },
+      {
         title: "nav_items.ui_ux",
         path: "/portfolio?byCategory=1",
       },

@@ -7,7 +7,10 @@ import { getStaticPropsTranslations } from '@/utils/helpers/i18n';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const posts = await fetchData('posts/featured', context.locale);
+  const posts = await fetchData({
+    path: "posts/featured",
+    locale: context.locale,
+  });
 
   return {
     props: {

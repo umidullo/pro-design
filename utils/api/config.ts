@@ -1,11 +1,21 @@
-export const fetchData = async (
-  path: string,
-  locale?: string,
-  params?: Record<string, unknown> | string
-) => {
+export const fetchData = async ({
+  path,
+  locale,
+  params,
+}: {
+  path: string;
+  locale?: string;
+  params?: Record<string, unknown>;
+}) => {
   try {
     const response = await fetch(
-      `https://prodesignstudio.uz/api/v1/${path}${params ? params : ""}`,
+      `https://prodesignstudio.uz/api/v1/${path}?${
+        params
+          ? Object.entries(params)
+              .map((el) => el.join("="))
+              .join("&")
+          : ""
+      }`,
       {
         method: "GET",
         headers: {
