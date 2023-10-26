@@ -81,11 +81,11 @@ export default function Page({
               previousLabel={<Arrow className="w-5 h-5" />}
               pageLinkClassName="w-full h-full flex justify-center items-center text-white text-[13px] font-semibold  border border-white/40 rounded-lg font-sans hover:bg-white/10"
               pageClassName="w-8 h-8"
-              activeLinkClassName="bg-white text-[#000] hover:text-white"
+              activeLinkClassName="bg-white text-black hover:text-white"
               containerClassName="flex gap-1"
               previousClassName="w-8 h-8  border border-white/40 rounded-lg font-sans hover:bg-white/10"
               nextClassName="w-8 h-8  border border-white/40 rounded-lg font-sans hover:bg-white/10"
-              disabledClassName="border border-white/10 text-white/10"
+              disabledClassName="border border-white/5 text-white/10"
               previousLinkClassName="w-full h-full flex items-center justify-center"
               nextLinkClassName="w-full h-full flex items-center justify-center"
               renderOnZeroPageCount={null}

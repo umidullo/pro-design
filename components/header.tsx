@@ -3,14 +3,13 @@ import MobileNav from '@/components/mobile-nav';
 import Nav from '@/components/nav';
 import { BurgerIcon, CloseIcon, SparklesIcon } from "@/components/ui/icon";
 import Wrapper from "@/components/ui/wrapper";
-import { Button } from "@/shared/ui";
 import { Dialog } from "@headlessui/react";
 import axios from "axios";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 
@@ -123,13 +122,13 @@ const Header = () => {
         <MobileNav isOpen={isOpen} />
         <div className="hidden lg:flex gap-3">
           <LocaleSwitcher />
-          <Button
+          <button
             onClick={() => setIsModalOpen(true)}
-            icon={<SparklesIcon className="w-5 h-5 ml-2" />}
-            className="rounded-full"
+            className="w-fit py-[10px] px-4 leading-5 flex flex-row items-center justify-between mx-auto bg-transparent text-white border border-white hover:bg-white hover:text-black active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md transition-all ease-in-out duration-150 text-lg font-normal rounded-full"
           >
             {t("buttons.order")}
-          </Button>
+            <SparklesIcon className="w-5 h-5 ml-2" />
+          </button>
         </div>
       </Wrapper>
       <Dialog
@@ -200,9 +199,12 @@ const Header = () => {
                   </span>
                 )}
               </div>
-              <Button type="submit" className="justify-center">
+              <button
+                type="submit"
+                className="rounded-xl w-fit py-[10px] px-4 leading-5 flex flex-row items-center justify-between mx-auto bg-transparent text-white border border-white hover:bg-white hover:text-black active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md transition-all ease-in-out duration-150 text-lg font-normal "
+              >
                 Submit
-              </Button>
+              </button>
             </form>
           </Dialog.Panel>
         </div>

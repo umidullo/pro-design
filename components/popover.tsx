@@ -40,13 +40,13 @@ const Popover = ({
             <ChevronIcon
               className={`${
                 open ? "rotate-180" : "rotate-0"
-              } ml-2 h-5 w-5 transition duration-300 ease-in-out`}
+              } ml-2 h-5 w-5 transition duration-150 ease-in-out`}
               aria-hidden="true"
             />
           </HPopover.Button>
           <Transition
             as={Fragment}
-            enter="transition ease-out duration-300"
+            enter="transition ease-out duration-150"
             enterFrom="opacity-0 translate-y-1"
             enterTo="opacity-100 translate-y-0"
             leave="transition ease-in duration-150"

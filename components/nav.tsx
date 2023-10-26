@@ -30,7 +30,7 @@ const Nav = () => {
             key={item.path}
             className="capitalize px-4 py-2 flex items-center justify-center flex-col text-center relative text-white 
             after:content-[''] after:absolute after:-bottom-1 after:w-0 after:h-1 after:rounded-t-sm after:bg-white 
-            hover:after:w-full transition-all after:ease-in-out after:duration-300"
+            hover:after:w-full transition-all after:ease-in-out after:duration-150"
           >
             {t(item.title)}
           </Link>

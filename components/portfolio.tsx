@@ -2,8 +2,8 @@ import PortfolioCard from '@/components/portfolio-card';
 import BlockTitle from '@/components/ui/block-title';
 import { ArrowIcon } from "@/components/ui/icon";
 import Wrapper from "@/components/ui/wrapper";
-import { Button } from "@/shared/ui";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 import React from "react";
 
 function Portfolio({
@@ -32,13 +32,13 @@ function Portfolio({
           />
         ))}
       </div>
-      <Button
-        className="mx-auto"
+      <Link
         href="/portfolio"
-        icon={<ArrowIcon className="w-5 h-5 stroke-2 ml-2" />}
+        className="rounded-xl w-fit py-[10px] px-4 leading-5 flex flex-row items-center justify-between mx-auto bg-transparent text-white border border-white hover:bg-white hover:text-black active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md transition-all ease-in-out duration-150 text-lg font-normal "
       >
         {t("buttons.portfolio")}
-      </Button>
+        <ArrowIcon className="w-5 h-5 stroke-2 ml-2" />
+      </Link>
     </Wrapper>
   );
 }
