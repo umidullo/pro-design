@@ -69,7 +69,7 @@ export default function Page({
               />
             ))}
           </div>
-          <div className="mt-20 w-full flex justify-center">
+          <div className="mt-20 w-full flex justify-center text-white">
             <ReactPaginate
               breakLabel={"..."}
               nextLabel={<Arrow className="w-5 h-5 rotate-180" />}
@@ -79,7 +79,7 @@ export default function Page({
               forcePage={page - 1}
               onPageChange={({ selected }) => setQueryParam(`${selected + 1}`)}
               previousLabel={<Arrow className="w-5 h-5" />}
-              pageLinkClassName="w-full h-full flex justify-center items-center text-white text-[13px] font-semibold  border border-white/40 rounded-lg font-sans hover:bg-white/10"
+              pageLinkClassName="w-full h-full flex justify-center items-center text-[13px] font-semibold  border border-white/40 rounded-lg font-sans hover:bg-white/10"
               pageClassName="w-8 h-8"
               activeLinkClassName="bg-white text-black hover:text-white"
               containerClassName="flex gap-1"
