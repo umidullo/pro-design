@@ -20,7 +20,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       posts,
-      query: { ...context.query },
+      query: {
+        ...context.query,
+        page: context.query.page || 1,
+      },
       ...(await getStaticPropsTranslations(context.locale ?? "ru")),
     },
   };
