@@ -10,21 +10,6 @@ export const fetchData = async ({
   params?: Record<string, unknown>;
 }) => {
   try {
-    // const response = await fetch(
-    //   `https://prodesignstudio.uz/api/v1/${path}?${
-    //     params
-    //       ? Object.entries(params)
-    //           .map((el) => el.join("="))
-    //           .join("&")
-    //       : ""
-    //   }`,
-    //   {
-    //     method: "GET",
-    //     headers: {
-    //       "Accept-Language": locale ?? "ru",
-    //     },
-    //   }
-    // );
     const response = await axios.get(
       `https://prodesignstudio.uz/api/v1/${path}`,
       {
@@ -33,7 +18,6 @@ export const fetchData = async ({
         },
         params: {
           ...params,
-          size: 10,
         },
       }
     );
