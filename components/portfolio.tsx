@@ -33,7 +33,7 @@ function Portfolio({
         ))}
       </div>
       <Link
-        href="/portfolio"
+        href="/portfolio?page=1"
         className="rounded-xl w-fit py-[10px] px-4 leading-5 flex flex-row items-center justify-between mx-auto bg-transparent text-white border border-white hover:bg-white hover:text-black active:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:rounded-md transition-all ease-in-out duration-150 text-lg font-normal "
       >
         {t("buttons.portfolio")}
