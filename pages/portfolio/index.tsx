@@ -9,23 +9,18 @@ import { useRouter } from "next/router";
 import ReactPaginate from "react-paginate";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  let page = Number(context.query.page) || 1;
-  // let category = Number(context.query.byCategory) || undefined;
-
   const posts = await fetchData({
-    path: Number(context.query.byCategory)
-      ? `posts/byCategory/${context.query.byCategory}`
-      : "posts",
+    path: "posts",
     locale: context.locale,
     params: {
-      page,
+      ...context.query,
     },
   });
 
   return {
     props: {
       posts,
-      page,
+      query: { ...context.query },
       ...(await getStaticPropsTranslations(context.locale ?? "ru")),
     },
   };
@@ -33,17 +28,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 export default function Page({
   posts,
-  page,
+  query,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { t } = useTranslation();
 
   const router = useRouter();
 
   const setQueryParam = (page: string) => {
-    const queryParams = { page: page };
     router.push({
       pathname: router.pathname,
-      query: queryParams,
+      query: { ...query, page: page },
     });
   };
 
@@ -75,8 +69,8 @@ export default function Page({
               nextLabel={<Arrow className="w-5 h-5 rotate-180" />}
               pageRangeDisplayed={5}
               pageCount={posts.pagination.totalPages}
-              initialPage={page - 1}
-              forcePage={page - 1}
+              initialPage={query.page - 1}
+              forcePage={query.page - 1}
               onPageChange={({ selected }) => setQueryParam(`${selected + 1}`)}
               previousLabel={<Arrow className="w-5 h-5" />}
               pageLinkClassName="w-full h-full flex justify-center items-center text-[13px] font-semibold  border border-white/40 rounded-lg font-sans hover:bg-white/10"

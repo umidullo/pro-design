@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const fetchData = async ({
   path,
   locale,
@@ -8,22 +10,31 @@ export const fetchData = async ({
   params?: Record<string, unknown>;
 }) => {
   try {
-    const response = await fetch(
-      `https://prodesignstudio.uz/api/v1/${path}?${
-        params
-          ? Object.entries(params)
-              .map((el) => el.join("="))
-              .join("&")
-          : ""
-      }`,
+    // const response = await fetch(
+    //   `https://prodesignstudio.uz/api/v1/${path}?${
+    //     params
+    //       ? Object.entries(params)
+    //           .map((el) => el.join("="))
+    //           .join("&")
+    //       : ""
+    //   }`,
+    //   {
+    //     method: "GET",
+    //     headers: {
+    //       "Accept-Language": locale ?? "ru",
+    //     },
+    //   }
+    // );
+    const response = await axios.get(
+      `https://prodesignstudio.uz/api/v1/${path}`,
       {
-        method: "GET",
         headers: {
           "Accept-Language": locale ?? "ru",
         },
+        params,
       }
     );
-    return response.json();
+    return response.data;
   } catch (error) {
     return false;
   }

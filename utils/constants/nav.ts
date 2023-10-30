@@ -36,31 +36,31 @@ export const nav = [
     sub_menu: [
       {
         title: "nav_items.all",
-        path: "/portfolio",
+        path: "/portfolio?page=1",
       },
       {
         title: "nav_items.ui_ux",
-        path: "/portfolio?byCategory=1",
+        path: "/portfolio?byCategory=1&page=1",
       },
       {
         title: "nav_items.web",
-        path: "/portfolio?byCategory=3",
+        path: "/portfolio?byCategory=3&page=1",
       },
       {
         title: "nav_items.motion",
-        path: "/portfolio?byCategory=5",
+        path: "/portfolio?byCategory=5&page=1",
       },
       {
         title: "nav_items.branding",
-        path: "/portfolio?byCategory=2",
+        path: "/portfolio?byCategory=2&page=1",
       },
       {
         title: "nav_items.vfx",
-        path: "/portfolio?byCategory=6",
+        path: "/portfolio?byCategory=6&page=1",
       },
       {
         title: "nav_items.interior",
-        path: "/portfolio?byCategory=7",
+        path: "/portfolio?byCategory=7&page=1",
       },
     ],
   },
