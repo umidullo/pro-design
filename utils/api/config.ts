@@ -31,7 +31,10 @@ export const fetchData = async ({
         headers: {
           "Accept-Language": locale ?? "ru",
         },
-        params,
+        params: {
+          ...params,
+          size: 10,
+        },
       }
     );
     return response.data;
