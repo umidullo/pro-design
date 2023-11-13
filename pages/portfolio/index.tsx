@@ -66,14 +66,14 @@ export default function Page({
               />
             ))}
           </div>
-          {query.page ? (
+          {query.page && posts.pagination.totalPages ? (
             <div className="mt-20 w-full flex justify-center text-white">
               <ReactPaginate
                 breakLabel={"..."}
                 nextLabel={<Arrow className="w-5 h-5 rotate-180" />}
                 pageRangeDisplayed={5}
                 pageCount={posts.pagination.totalPages}
-                initialPage={+query.page - 1}
+                initialPage={Number(query.page) - 1}
                 onPageChange={({ selected }) =>
                   setQueryParam(`${selected + 1}`)
                 }
