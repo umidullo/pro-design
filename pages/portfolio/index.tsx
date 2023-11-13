@@ -87,7 +87,6 @@ export default function Page({
                 disabledClassName="border border-white/5 text-white/10"
                 previousLinkClassName="w-full h-full flex items-center justify-center"
                 nextLinkClassName="w-full h-full flex items-center justify-center"
-                renderOnZeroPageCount={null}
               />
             </div>
           ) : null}
