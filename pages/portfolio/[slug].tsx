@@ -1,9 +1,9 @@
-import Wrapper from '@/components/ui/wrapper';
-import { fetchData } from '@/utils/api/config';
-import { getStaticPropsTranslations } from '@/utils/helpers/i18n';
-import {GetServerSideProps, InferGetServerSidePropsType} from 'next';
-import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
+import Wrapper from "@/components/ui/wrapper";
+import { fetchData } from "@/utils/api/config";
+import { getStaticPropsTranslations } from "@/utils/helpers/i18n";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import Head from "next/head";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       data,
-      ...(await getStaticPropsTranslations(context.locale ?? 'ru')),
+      ...(await getStaticPropsTranslations(context.locale ?? "ru")),
     },
   };
 };
@@ -87,15 +87,17 @@ export default function Page({
                   <span>{t("portfolio_page.client")}</span>
                   <div className="flex justify-end flex-col items-end">
                     {data.clients.map((author: string, i: number) => (
-                      <span key={i}>{author}</span>
+                      <span key={i} className="text-end">
+                        {author}
+                      </span>
                     ))}
                   </div>
                 </li>
               ) : null}
-              <li className="flex justify-between items-center">
+              {/* <li className="flex justify-between items-center">
                 <span>{t("portfolio_page.category")}</span>
                 <span>{data.category_name ?? ""}</span>
-              </li>
+              </li> */}
               <li className="flex justify-between items-center">
                 <span>{t("portfolio_page.date")}</span>{" "}
                 <span>{data.date.slice(0, 4)}</span>

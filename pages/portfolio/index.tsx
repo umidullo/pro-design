@@ -1,10 +1,10 @@
-import PortfolioCard from '@/components/portfolio-card';
-import BlockTitle from '@/components/ui/block-title';
-import Wrapper from '@/components/ui/wrapper';
-import { fetchData } from '@/utils/api/config';
-import { getStaticPropsTranslations } from '@/utils/helpers/i18n';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { useTranslation } from 'next-i18next';
+import PortfolioCard from "@/components/portfolio-card";
+import BlockTitle from "@/components/ui/block-title";
+import Wrapper from "@/components/ui/wrapper";
+import { fetchData } from "@/utils/api/config";
+import { getStaticPropsTranslations } from "@/utils/helpers/i18n";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import ReactPaginate from "react-paginate";
 
@@ -66,28 +66,31 @@ export default function Page({
               />
             ))}
           </div>
-          <div className="mt-20 w-full flex justify-center text-white">
-            <ReactPaginate
-              breakLabel={"..."}
-              nextLabel={<Arrow className="w-5 h-5 rotate-180" />}
-              pageRangeDisplayed={5}
-              pageCount={posts.pagination.totalPages}
-              initialPage={query.page - 1}
-              forcePage={query.page - 1}
-              onPageChange={({ selected }) => setQueryParam(`${selected + 1}`)}
-              previousLabel={<Arrow className="w-5 h-5" />}
-              pageLinkClassName="w-full h-full flex justify-center items-center text-[13px] font-semibold  border border-white/40 rounded-lg font-sans hover:bg-white/10"
-              pageClassName="w-8 h-8"
-              activeLinkClassName="bg-white text-black hover:text-white"
-              containerClassName="flex gap-1"
-              previousClassName="w-8 h-8  border border-white/40 rounded-lg font-sans hover:bg-white/10"
-              nextClassName="w-8 h-8  border border-white/40 rounded-lg font-sans hover:bg-white/10"
-              disabledClassName="border border-white/5 text-white/10"
-              previousLinkClassName="w-full h-full flex items-center justify-center"
-              nextLinkClassName="w-full h-full flex items-center justify-center"
-              renderOnZeroPageCount={null}
-            />
-          </div>
+          {query.page ? (
+            <div className="mt-20 w-full flex justify-center text-white">
+              <ReactPaginate
+                breakLabel={"..."}
+                nextLabel={<Arrow className="w-5 h-5 rotate-180" />}
+                pageRangeDisplayed={5}
+                pageCount={posts.pagination.totalPages}
+                initialPage={+query.page - 1}
+                onPageChange={({ selected }) =>
+                  setQueryParam(`${selected + 1}`)
+                }
+                previousLabel={<Arrow className="w-5 h-5" />}
+                pageLinkClassName="w-full h-full flex justify-center items-center text-[13px] font-semibold  border border-white/40 rounded-lg font-sans hover:bg-white/10"
+                pageClassName="w-8 h-8"
+                activeLinkClassName="bg-white text-black hover:text-white"
+                containerClassName="flex gap-1"
+                previousClassName="w-8 h-8  border border-white/40 rounded-lg font-sans hover:bg-white/10"
+                nextClassName="w-8 h-8  border border-white/40 rounded-lg font-sans hover:bg-white/10"
+                disabledClassName="border border-white/5 text-white/10"
+                previousLinkClassName="w-full h-full flex items-center justify-center"
+                nextLinkClassName="w-full h-full flex items-center justify-center"
+                renderOnZeroPageCount={null}
+              />
+            </div>
+          ) : null}
         </>
       )}
     </Wrapper>
