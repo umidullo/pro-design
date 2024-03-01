@@ -1,9 +1,9 @@
-import { SocialIcon } from '@/components/ui/icon';
-import Wrapper from '@/components/ui/wrapper';
-import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { SocialIcon } from "@/components/ui/icon";
+import Wrapper from "@/components/ui/wrapper";
+import { useTranslation } from "next-i18next";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const footer_nav = [
   {
@@ -89,12 +89,12 @@ const footer_nav = [
         path: "https://yandex.uz/maps/-/CDQpZZ~n",
       },
       {
-        title: "nav_items.tel_1",
-        path: "tel:998942224488",
-      },
-      {
         title: "nav_items.tel_2",
         path: "tel:998942223366",
+      },
+      {
+        title: "nav_items.tel_1",
+        path: "tel:998936123443",
       },
     ],
   },
